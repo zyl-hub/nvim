@@ -1,0 +1,32 @@
+{
+    "coc.preferences.extensionUpdateCheck": "weekly",
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextPrefix": ">>>",
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.checkCurrentLine": true,
+    "suggest.noselect": true,
+	"suggest.enablePreselect": false,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
