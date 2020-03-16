@@ -51,9 +51,10 @@ set signcolumn=yes
 set mouse=a
 set encoding=utf-8
 let &t_ut=''
-set noexpandtab
+" tab or space
+set expandtab
 set tabstop=2
-set shiftwidth=2
+set shiftwidth=4
 set softtabstop=2
 set list
 set listchars=tab:▸\ ,trail:▫
@@ -261,7 +262,7 @@ let g:mkdp_refresh_slow = 0
 let g:mkdp_command_for_global = 0
 let g:mkdp_open_to_the_world = 0
 let g:mkdp_open_ip = ''
-let g:mkdp_browser = 'google-chrome-stable'
+let g:mkdp_browser = 'chromium'
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
@@ -436,3 +437,13 @@ let g:php_folding = 1
 
 " HicusLine
 " let g:HicusLineEnabled = 1
+
+" ===
+" === CocExploer
+" ===
+nnoremap tt :CocCommand explorer<CR>
+
+" ===
+" === rnvimr
+" ===
+nnoremap ra :RnvimrToggle<CR>
