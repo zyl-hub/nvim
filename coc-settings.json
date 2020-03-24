@@ -1,7 +1,7 @@
 {
     "coc.preferences.extensionUpdateCheck": "weekly",
     "diagnostic.virtualText": true,
-    "diagnostic.virtualTextPrefix": ">>>",
+    "codeLens.enable": true,
     "diagnostic.refreshOnInsertMode": false,
     "diagnostic.checkCurrentLine": true,
     "suggest.noselect": true,

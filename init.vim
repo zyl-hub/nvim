@@ -228,8 +228,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'kshenoy/vim-signature'
 
 " conda
-Plug 'cjrh/vim-conda'
-
+" Plug 'cjrh/vim-conda'
+" 
 " Other useful utilities
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim' " distraction free writing mode
