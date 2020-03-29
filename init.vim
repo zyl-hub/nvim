@@ -4,8 +4,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-" statusline
-
+" status line
 set laststatus=2
 set statusline=
 " set statusline+=%#PmenuSel#
@@ -41,13 +40,15 @@ hi User7 cterm=none ctermfg=169 ctermbg=219
 hi User8 cterm=none ctermfg=169 ctermbg=147
 hi User9 cterm=none ctermfg=169 ctermbg=224
 
+
 set hidden
+set foldcolumn=0
+set signcolumn=no
 set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
 set mouse=a
 set encoding=utf-8
 let &t_ut=''
@@ -85,10 +86,10 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " ===
-" === keyBinding
+" === key Binding
 " ===
 nnoremap <LEADER><CR> :nohlsearch<CR>
-" RunMyCode
+" Run My Code
 nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
     exec "w"
@@ -127,7 +128,7 @@ func! CompileRunCode()
 		:term go run %
 	endif
 endfunc
-" WindowSplitBinding
+" Window Split Binding
 nnoremap <LEADER>sr :set splitright<CR>:vsplit<CR>
 nnoremap <LEADER>sl :set nosplitright<CR>:vsplit<CR>
 nnoremap <LEADER>su :set nosplitbelow<CR>:split<CR>
@@ -153,7 +154,7 @@ nnoremap <LEADER>mtc :RemoveToc<CR>
 " FormatterBinding
 nnoremap <LEADER>f  :Autoformat<CR>
 " Python Envs Change
-nnoremap <LEADER>ec :CondaChangeEnv<CR>
+" nnoremap <LEADER>ec :CondaChangeEnv<CR>
 " ===
 " === New Section
 " ===
@@ -165,10 +166,12 @@ source ~/.config/nvim/md-snippets.vim
 nnoremap - dd
 " count how many characters
 nnoremap <LEADER>hc :%s/./&/g<CR>$
+
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'RRethy/vim-illuminate'
-
 " To be developed
 " Plug 'Styadev/HicusLine'
 " It's amazing but I found that the default is better for me
@@ -190,7 +193,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " Undo Tree
 Plug 'mbbill/undotree/'
@@ -447,3 +449,5 @@ nnoremap tt :CocCommand explorer<CR>
 " === rnvimr
 " ===
 nnoremap ra :RnvimrToggle<CR>
+set signcolumn=yes
+highlight clear SignColumn

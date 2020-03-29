@@ -5,6 +5,7 @@
     "diagnostic.refreshOnInsertMode": false,
     "diagnostic.checkCurrentLine": true,
     "suggest.noselect": true,
+    "diagnostic.displayByAle": false,
 	"suggest.enablePreselect": false,
     "languageserver": {
         "ccls": {
