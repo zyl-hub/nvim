@@ -254,6 +254,9 @@ Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
+
+" Auto Pairs
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
