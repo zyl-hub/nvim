@@ -1,131 +1,151 @@
 let mapleader=" "
 
-nnoremap \<LEADER\>\<CR\> :nohlsearch\<CR\>
+n \<LEADER\>\<CR\> :nohlsearch\<CR\>
 
-nnoremap \<LEADER\>r :call CompileRunCode()\<CR\>
+n \<LEADER\>r :call CompileRunCode()\<CR\>
 
-nnoremap \<LEADER\>sr :set splitright\<CR\>:vsplit\<CR\>
+n \<LEADER\>sr :set splitright\<CR\>:vsplit\<CR\>
 
-nnoremap \<LEADER\>sl :set nosplitright\<CR\>:vsplit\<CR\>
+n \<LEADER\>sl :set nosplitright\<CR\>:vsplit\<CR\>
 
-nnoremap \<LEADER\>su :set nosplitbelow\<CR\>:split\<CR\>
+n \<LEADER\>su :set nosplitbelow\<CR\>:split\<CR\>
 
-nnoremap \<LEADER\>sd :set splitbelow\<CR\>:split\<CR\>
+n \<LEADER\>sd :set splitbelow\<CR\>:split\<CR\>
 
-nnoremap \<LEADER\>gr \<C-w\>l
+n \<LEADER\>gr \<C-w\>l
 
-nnoremap \<LEADER\>gu \<C-w\>k
+n \<LEADER\>gu \<C-w\>k
 
-nnoremap \<LEADER\>gd \<C-w\>j
+n \<LEADER\>gd \<C-w\>j
 
-nnoremap \<LEADER\>gl \<C-w\>h
+n \<LEADER\>gl \<C-w\>h
 
-nnoremap \<LEADER\>\<up\> :res +5\<CR\>
+n \<LEADER\>\<up\> :res +5\<CR\>
 
-nnoremap \<LEADER\>\<down\> :res -5\<CR\>
+n \<LEADER\>\<down\> :res -5\<CR\>
 
-nnoremap \<LEADER\>\<left\> :vertical resize-5\<CR\>
+n \<LEADER\>\<left\> :vertical resize-5\<CR\>
 
-nnoremap \<LEADER\>\<right\> :vertical resize+5\<CR\>
+n \<LEADER\>\<right\> :vertical resize+5\<CR\>
 
-nnoremap \<LEADER\>tt :tabe\<CR\>
+n \<LEADER\>tt :tabe\<CR\>
 
-nnoremap \<LEADER\>tl :-tabnext\<CR\>
+n \<LEADER\>tl :-tabnext\<CR\>
 
-nnoremap \<LEADER\>tr :+tabnext\<CR\>
+n \<LEADER\>tr :+tabnext\<CR\>
 
-nnoremap \<LEADER\>sc :set spell!\<CR\>
+n \<LEADER\>sc :set spell!\<CR\>
 
-nnoremap \<LEADER\>\<LEADER\> \<Esc\>/\<++\>\<CR\>:nohlsearch\<CR\>c4l
+n \<LEADER\>\<LEADER\> \<Esc\>/\<++\>\<CR\>:nohlsearch\<CR\>c4l
 
-nnoremap tx :r !figlet
+n tx :r !figlet
 
-nnoremap \<LEADER\>mt :GenTocGFM\<CR\>
+n \<LEADER\>mt :GenTocGFM\<CR\>
 
-nnoremap \<LEADER\>mtc :RemoveToc\<CR\>
+n \<LEADER\>mtc :RemoveToc\<CR\>
 
-nnoremap \<LEADER\>f  :Autoformat\<CR\>
+n \<LEADER\>f  :Autoformat\<CR\>
 
-" nnoremap \<LEADER\>ec :CondaChangeEnv\<CR\>
+n - dd
 
-nnoremap - dd
+n \<LEADER\>hc :%s/./&/g\<CR\>$
 
-nnoremap \<LEADER\>hc :%s/./&/g\<CR\>$
+i \<silent\>\<expr\> \<TAB\>
 
-inoremap \<silent\>\<expr\> \<TAB\>
+i \<silent\>\<expr\> \<TAB\>
 
-inoremap \<silent\>\<expr\> \<TAB\>
+i \<expr\>\<S-TAB\> pumvisible() ? "\\<C-p\>" : "\\<C-h\>"
 
-inoremap \<expr\>\<S-TAB\> pumvisible() ? "\\<C-p\>" : "\\<C-h\>"
+i \<silent\>\<expr\> \<c-space\> coc#refresh()
 
-inoremap \<silent\>\<expr\> \<c-space\> coc#refresh()
+i \<expr\> \<cr\> complete\_info()["selected"] != "-1" ? "\\<C-y\>" : "\\<C-g\>u\\<CR\>"
 
-  inoremap \<expr\> \<cr\> complete\_info()["selected"] != "-1" ? "\\<C-y\>" : "\\<C-g\>u\\<CR\>"
+i \<expr\> \<cr\> pumvisible() ? "\\<C-y\>" : "\\<C-g\>u\\<CR\>"
 
-  imap \<expr\> \<cr\> pumvisible() ? "\\<C-y\>" : "\\<C-g\>u\\<CR\>"
+n \<silent\> [g \<Plug\>(coc-diagnostic-prev)
 
-nmap \<silent\> [g \<Plug\>(coc-diagnostic-prev)
+n \<silent\> ]g \<Plug\>(coc-diagnostic-next)
 
-nmap \<silent\> ]g \<Plug\>(coc-diagnostic-next)
+n \<silent\> gd \<Plug\>(coc-definition)
 
-nmap \<silent\> gd \<Plug\>(coc-definition)
+n \<silent\> gy \<Plug\>(coc-type-definition)
 
-nmap \<silent\> gy \<Plug\>(coc-type-definition)
+n \<silent\> gi \<Plug\>(coc-implementation)
 
-nmap \<silent\> gi \<Plug\>(coc-implementation)
+n \<silent\> gr \<Plug\>(coc-references)
 
-nmap \<silent\> gr \<Plug\>(coc-references)
+n \<silent\> K :call \<SID\>show\_documentation()\<CR\>
 
-nnoremap \<silent\> K :call \<SID\>show\_documentation()\<CR\>
+n \<leader\>rn \<Plug\>(coc-rename)
 
-nmap \<leader\>rn \<Plug\>(coc-rename)
+x \<leader\>f  \<Plug\>(coc-format-selected)
 
-xmap \<leader\>f  \<Plug\>(coc-format-selected)
+n \<leader\>f  \<Plug\>(coc-format-selected)
 
-nmap \<leader\>f  \<Plug\>(coc-format-selected)
+x \<leader\>a  \<Plug\>(coc-codeaction-selected)
 
-xmap \<leader\>a  \<Plug\>(coc-codeaction-selected)
+n \<leader\>a  \<Plug\>(coc-codeaction-selected)
 
-nmap \<leader\>a  \<Plug\>(coc-codeaction-selected)
+" Re keys for applying codeAction to the current line.
 
-" Remap keys for applying codeAction to the current line.
+n \<leader\>ac  \<Plug\>(coc-codeaction)
 
-nmap \<leader\>ac  \<Plug\>(coc-codeaction)
+n \<leader\>qf  \<Plug\>(coc-fix-current)
 
-nmap \<leader\>qf  \<Plug\>(coc-fix-current)
+x if \<Plug\>(coc-funcobj-i)
 
-xmap if \<Plug\>(coc-funcobj-i)
+x af \<Plug\>(coc-funcobj-a)
 
-xmap af \<Plug\>(coc-funcobj-a)
+o if \<Plug\>(coc-funcobj-i)
 
-omap if \<Plug\>(coc-funcobj-i)
+o af \<Plug\>(coc-funcobj-a)
 
-omap af \<Plug\>(coc-funcobj-a)
+n \<silent\> \<TAB\> \<Plug\>(coc-range-select)
 
-nmap \<silent\> \<TAB\> \<Plug\>(coc-range-select)
+x \<silent\> \<TAB\> \<Plug\>(coc-range-select)
 
-xmap \<silent\> \<TAB\> \<Plug\>(coc-range-select)
+n \<silent\> \<space\>a  :\<C-u\>CocList diagnostics\<cr\>
 
-" Mappings using CoCList:
+n \<silent\> \<space\>e  :\<C-u\>CocList extensions\<cr\>
 
-nnoremap \<silent\> \<space\>a  :\<C-u\>CocList diagnostics\<cr\>
+n \<silent\> \<space\>c  :\<C-u\>CocList commands\<cr\>
 
-nnoremap \<silent\> \<space\>e  :\<C-u\>CocList extensions\<cr\>
+n \<silent\> \<space\>o  :\<C-u\>CocList outline\<cr\>
 
-nnoremap \<silent\> \<space\>c  :\<C-u\>CocList commands\<cr\>
+n \<silent\> \<space\>s  :\<C-u\>CocList -I symbols\<cr\>
 
-nnoremap \<silent\> \<space\>o  :\<C-u\>CocList outline\<cr\>
+n \<silent\> \<space\>j  :\<C-u\>CocNext\<CR\>
 
-nnoremap \<silent\> \<space\>s  :\<C-u\>CocList -I symbols\<cr\>
+n \<silent\> \<space\>k  :\<C-u\>CocPrev\<CR\>
 
-nnoremap \<silent\> \<space\>j  :\<C-u\>CocNext\<CR\>
+n \<silent\> \<space\>p  :\<C-u\>CocListResume\<CR\>
 
-nnoremap \<silent\> \<space\>k  :\<C-u\>CocPrev\<CR\>
+n zuz \<Plug\>(FastFoldUpdate)
 
-nnoremap \<silent\> \<space\>p  :\<C-u\>CocListResume\<CR\>
+n tt :CocCommand explorer\<CR\>
 
-nmap zuz \<Plug\>(FastFoldUpdate)
+n ra :RnvimrToggle\<CR\>
 
-nnoremap tt :CocCommand explorer\<CR\>
+\<leader\>cc |NERDCommenterComment|
 
-nnoremap ra :RnvimrToggle\<CR\>
+\<leader\>cn |NERDCommenterNested|
+
+\<leader\>c\<space\> |NERDCommenterToggle|
+
+\<leader\>cm |NERDCommenterMinimal|
+
+\<leader\>ci |NERDCommenterInvert|
+
+\<leader\>cs |NERDCommenterSexy|
+
+\<leader\>cy |NERDCommenterYank|
+
+\<leader\>c$ |NERDCommenterToEOL|
+
+\<leader\>cA |NERDCommenterAppend|
+
+\<leader\>ca |NERDCommenterAltDelims|
+
+\<leader\>cl |NERDCommenterAlignLeft \<leader\>cb |NERDCommenterAlignBoth
+
+\<leader\>cu |NERDCommenterUncomment|
