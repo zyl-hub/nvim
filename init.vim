@@ -4,6 +4,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
+" hi illuminatedWord cterm=underline gui=underline
 " status line
 set laststatus=2
 set statusline=
