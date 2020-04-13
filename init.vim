@@ -4,42 +4,44 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-" hi illuminatedWord cterm=underline gui=underline
+set termguicolors
+
+hi illuminatedWord cterm=underline gui=underline
 " status line
-set laststatus=2
-set statusline=
-" set statusline+=%#PmenuSel#
-" Filepath
-" F for full
-" f for filename
-" set statusline+=%{StatuslineGit()}
-set statusline+=%1*\ >^.^<\ 
-set statusline+=%2*\ %F\ 
-" m for [+]
-" M for +
-set statusline+=%3*%m
-" left and right devide
-set statusline+=%4*%=
-" Change the color in the right
-" set statusline+=%#CursorColumn#
-set statusline+=%5*\ %y\ 
-set statusline+=%6*\ %{&fileencoding?&fileencoding:&encoding}\ 
-" Unix or windows
-set statusline+=%7*\[%{&fileformat}\]\ 
-" the % of the files
-set statusline+=%8*\ %p%%\ 
-set statusline+=%9*\ %{strftime('%H:%M')}\ 
-" Line and column
-" set statusline+=\ %l:%c
-hi User1 cterm=none ctermfg=171 ctermbg=183
-hi User2 cterm=none ctermfg=171 ctermbg=225
-hi User3 cterm=none ctermfg=1 ctermbg=226
-hi User4 cterm=none ctermfg=169 ctermbg=223
-hi User5 cterm=none ctermfg=169 ctermbg=231
-hi User6 cterm=none ctermfg=169 ctermbg=219
-hi User7 cterm=none ctermfg=169 ctermbg=219
-hi User8 cterm=none ctermfg=169 ctermbg=147
-hi User9 cterm=none ctermfg=169 ctermbg=224
+" set laststatus=2
+"set statusline=
+"" set statusline+=%#PmenuSel#
+"" Filepath
+"" F for full
+"" f for filename
+"" set statusline+=%{StatuslineGit()}
+"set statusline+=%1*\ >^.^<\ 
+"set statusline+=%2*\ %F\ 
+"" m for [+]
+"" M for +
+"set statusline+=%3*%m
+"" left and right devide
+"set statusline+=%4*%=
+"" Change the color in the right
+"" set statusline+=%#CursorColumn#
+"set statusline+=%5*\ %y\ 
+"set statusline+=%6*\ %{&fileencoding?&fileencoding:&encoding}\ 
+"" Unix or windows
+"set statusline+=%7*\[%{&fileformat}\]\ 
+"" the % of the files
+"set statusline+=%8*\ %p%%\ 
+"set statusline+=%9*\ %{strftime('%H:%M')}\ 
+"" Line and column
+"" set statusline+=\ %l:%c
+"hi User1 cterm=none ctermfg=171 ctermbg=183
+"hi User2 cterm=none ctermfg=171 ctermbg=225
+"hi User3 cterm=none ctermfg=1 ctermbg=226
+"hi User4 cterm=none ctermfg=169 ctermbg=223
+"hi User5 cterm=none ctermfg=169 ctermbg=231
+"hi User6 cterm=none ctermfg=169 ctermbg=219
+"hi User7 cterm=none ctermfg=169 ctermbg=219
+"hi User8 cterm=none ctermfg=169 ctermbg=147
+"hi User9 cterm=none ctermfg=169 ctermbg=224
 
 
 set hidden
@@ -176,7 +178,9 @@ Plug 'RRethy/vim-illuminate'
 " To be developed
 " Plug 'Styadev/HicusLine'
 " It's amazing but I found that the default is better for me
-" Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
 " File navigation
 Plug 'junegunn/fzf.vim'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sysc'}
@@ -454,3 +458,42 @@ nnoremap tt :CocCommand explorer<CR>
 nnoremap ra :RnvimrToggle<CR>
 set signcolumn=yes
 highlight clear SignColumn
+
+" ===
+" === airline
+" ===
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'base16_spacemacs'
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.maxlinenr = '㏑'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'Ξ'
+    
+    " powerline symbols
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = ''
