@@ -297,7 +297,7 @@ let g:mkdp_page_title = '「${name}」'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips/']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
