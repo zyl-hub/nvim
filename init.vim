@@ -3,6 +3,7 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+set noshowmode
 
 set termguicolors
 
