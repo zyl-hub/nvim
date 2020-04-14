@@ -97,6 +97,8 @@ let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " ===
 " === key Binding
 " ===
+nnoremap <LEADER>gy :Goyo<CR>
+nnoremap <LEADER>gyn :Goyo!<CR>
 nnoremap <LEADER><CR> :nohlsearch<CR>
 " Run My Code
 nnoremap <LEADER>r :call CompileRunCode()<CR>
