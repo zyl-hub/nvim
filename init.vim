@@ -3,17 +3,11 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
-
-" ===
-" === don't show insert more than once
-" ===
-
+" don't show insert more than once
 set noshowmode
-
+" true color
 set termguicolors
-
 hi illuminatedWord cterm=underline gui=underline
-
 " ===
 " === now I use true color but if the terminal don't support true color,the following can be used
 " ===
@@ -53,8 +47,6 @@ hi illuminatedWord cterm=underline gui=underline
 "hi User7 cterm=none ctermfg=169 ctermbg=219
 "hi User8 cterm=none ctermfg=169 ctermbg=147
 "hi User9 cterm=none ctermfg=169 ctermbg=224
-
-
 set hidden
 set foldcolumn=0
 set signcolumn=no
@@ -66,7 +58,7 @@ set shortmess+=c
 set mouse=a
 set encoding=utf-8
 let &t_ut=''
-" tab or space
+" tab or space that's a question
 set expandtab
 set tabstop=2
 set shiftwidth=4
@@ -93,98 +85,19 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
+source ~/.config/nvim/md-snippets.vim
 " ===
-" === Choose envs
+" === Choose hosts
 " ===
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
-" ===
-" === key Binding
-" ===
-nnoremap <LEADER>gy :Goyo<CR>
-nnoremap <LEADER>gyn :Goyo!<CR>
-nnoremap <LEADER><CR> :nohlsearch<CR>
-" Run My Code
-nnoremap <LEADER>r :call CompileRunCode()<CR>
-func! CompileRunCode()
-    exec "w"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'vim'
-		exec "source %"
-	elseif &filetype == 'cpp'
-		set splitbelow
-		exec "!g++ -std=c++11 % -Wall -o %<"
-		:sp
-        :res -15
-		:term ./%<
-	elseif &filetype == 'java'
-		exec "!javac %"
-		exec "!time java %<"
-	elseif &filetype == 'sh'
-		:!time bash %
-	elseif &filetype == 'python'
-		set splitbelow
-		:sp
-		:term python3 %
-	elseif &filetype == 'html'
-		silent! exec "!".g:mkdp_browser." % &"
-	elseif &filetype == 'markdown'
-		exec "MarkdownPreview"
-	elseif &filetype == 'tex'
-		silent! exec "VimtexStop"
-		silent! exec "VimtexCompile"
-	elseif &filetype == 'dart'
-		CocCommand flutter.run
-	elseif &filetype == 'go'
-		set splitbelow
-		:sp
-		:term go run %
-	endif
-endfunc
-" Window Split Binding
-nnoremap <LEADER>sr :set splitright<CR>:vsplit<CR>
-nnoremap <LEADER>sl :set nosplitright<CR>:vsplit<CR>
-nnoremap <LEADER>su :set nosplitbelow<CR>:split<CR>
-nnoremap <LEADER>sd :set splitbelow<CR>:split<CR>
-nnoremap <LEADER>gr <C-w>l
-nnoremap <LEADER>gu <C-w>k
-nnoremap <LEADER>gd <C-w>j
-nnoremap <LEADER>gl <C-w>h
-nnoremap <LEADER><up> :res +5<CR>
-nnoremap <LEADER><down> :res -5<CR>
-nnoremap <LEADER><right> :vertical resize-5<CR>
-nnoremap <LEADER><left> :vertical resize+5<CR>
-" TabBinding
-nnoremap <LEADER>tt :tabe<CR>
-nnoremap <LEADER>tl :-tabnext<CR>
-nnoremap <LEADER>tr :+tabnext<CR>
-nnoremap <LEADER>sc :set spell!<CR>
-nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-nnoremap tx :r !figlet
-" MarkdownTocBinding
-nnoremap <LEADER>mt :GenTocGFM<CR>
-nnoremap <LEADER>mtc :RemoveToc<CR>
-" FormatterBinding
-nnoremap <LEADER>f  :Autoformat<CR>
-" Python Envs Change
-" nnoremap <LEADER>ec :CondaChangeEnv<CR>
-" ===
-" === New Section
-" ===
-source ~/.config/nvim/md-snippets.vim
-" nerdcommenter
+
+
+
 " ===
 " === All the Plugins
 " ===
-nnoremap - dd
-" count how many characters
-nnoremap <LEADER>hc :%s/./&/g<CR>$
-
-
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'RRethy/vim-illuminate'
@@ -273,10 +186,120 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'mhinz/vim-startify'
-
 " Auto Pairs was statisfied by coc-pairs
 call plug#end()
 
+
+
+"" ===
+"" === HicusLine
+"" ===
+"let g:HicusLineEnabled = 1
+"let g:HicusColorSetWay = 1
+"let g:HicusLine = {
+      "\'active': {
+      "\    'left': [ 'modehighlight', 'space', 'mode', 'space', 'spell',
+      "\              '%#infos#', 'gitinfo', 0, 'modified', 'filename',
+      "\              'readonly', 'space', '%#ErrorStatus#', 'errorstatus',
+      "\              'space', '%#WarningStatus#', 'warningstatus', 0, ],
+      "\    'right': [ 'filetype2', 'space', '%#infos#', 'fileencoding', 'space',
+      "\               'fileformat', 'modehighlight', 'space', 'linenumber', ':',
+      "\               'bufferlinesnumber', 'space', 'windowpercentage', 'space',
+      "\    ],
+      "\},
+      "\'basic_option': {
+      "\    'ErrorSign': '●',
+      "\    'WarningSign': '●',
+      "\},
+"\}
+"let g:HicusLineMode = {
+      "\'n':      [ 'NORMAL', 'normalmode', { 'infos': 'normalinfos', }, ],
+      "\'i':      [ 'INSERT', 'insertmode', { 'infos': 'otherinfos',  }, ],
+      "\'R':      [ 'REPLACE', 'replacemode', { 'infos': 'otherinfos',  }, ],
+      "\'v':      [ 'VISUAL', 'visualmode', { 'infos': 'otherinfos',  }, ],
+      "\'V':      [ 'L-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
+      "\"\<C-v>": [ 'B-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
+      "\'c':      [ 'COMMAND', 'commandmode', { 'infos': 'otherinfos',  }, ],
+      "\'s':      [ 'SELECT', 'normalmode', { 'infos': 'normalinfos',  }, ],
+      "\'S':      [ 'L-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
+      "\"\<C-s>": [ 'B-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
+      "\'t':      [ 'TERMINAL', 'normalmode', { 'infos': 'normalinfos',  }, ],
+"\}
+"let g:HicusColor = {
+      "\'StatusLine':     [ 'none' ,'#238E23', '#545454', ],
+      "\'normalmode':     [ 'bold' ,'#DB70DB', '#D9D9F3', ],
+      "\'insertmode':     [ 'bold', '#DB70DB', '#70DBDB', ],
+      "\'visualmode':     [ 'bold', '#DB70DB', '#FF6699', ],
+      "\'replacemode':    [ 'bold', '#DB70DB', '#9370DB', ],
+      "\'commandmode':    [ 'bold', '#C6C6C6', '#FF7F00' ],
+      "\'normalinfos':    [ 'none', '#FFFFFF', '#6272A4', ],
+      "\'otherinfos':     [ 'none', '#FF6EC7', '#BC8F8F', ],
+      "\'ErrorStatus':    [ 'none', '#FF0033', '#44475A', ],
+      "\'WarningStatus':  [ 'none', '#FFCC00', '#44475A', ],
+"\}
+
+" ===
+" === airline
+" ===
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'base16_spacemacs'
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.maxlinenr = '㏑'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'Ξ'
+    
+    " powerline symbols
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = ''
+
+" ===
+" === startify remove the bull when shartup
+" ===
+let g:startify_custom_header = []
+" ===
+" === FastFold
+" ===
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'ze', 'zu']
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
 
 "   Markdown settings
 let g:mkdp_auto_start = 0
@@ -437,27 +460,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-" ===
-" === FastFold
-" ===
-nmap zuz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-let g:fastfold_fold_movement_commands = [']z', '[z', 'ze', 'zu']
-let g:markdown_folding = 1
-let g:tex_fold_enabled = 1
-let g:vimsyn_folding = 'af'
-let g:xml_syntax_folding = 1
-let g:javaScript_fold = 1
-let g:sh_fold_enabled= 7
-let g:ruby_fold = 1
-let g:perl_fold = 1
-let g:perl_fold_blocks = 1
-let g:r_syntax_folding = 1
-let g:rust_fold = 1
-let g:php_folding = 1
-
 " HicusLine
 " let g:HicusLineEnabled = 1
 
@@ -473,92 +475,111 @@ nnoremap ra :RnvimrToggle<CR>
 set signcolumn=yes
 highlight clear SignColumn
 
-" ===
-" === airline
-" ===
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'base16_spacemacs'
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
 
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.maxlinenr = '㏑'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
-    
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
 " ===
-" === startify remove the bull when shartup
+" === Goyo
 " ===
-let g:startify_custom_header = []
+nnoremap <LEADER>gy :Goyo<CR>
+nnoremap <LEADER>gyn :Goyo!<CR>
+nnoremap <LEADER><CR> :nohlsearch<CR>
 
-"" ===
-"" === HicusLine
-"" ===
-"let g:HicusLineEnabled = 1
-"let g:HicusColorSetWay = 1
-"let g:HicusLine = {
-      "\'active': {
-      "\    'left': [ 'modehighlight', 'space', 'mode', 'space', 'spell',
-      "\              '%#infos#', 'gitinfo', 0, 'modified', 'filename',
-      "\              'readonly', 'space', '%#ErrorStatus#', 'errorstatus',
-      "\              'space', '%#WarningStatus#', 'warningstatus', 0, ],
-      "\    'right': [ 'filetype2', 'space', '%#infos#', 'fileencoding', 'space',
-      "\               'fileformat', 'modehighlight', 'space', 'linenumber', ':',
-      "\               'bufferlinesnumber', 'space', 'windowpercentage', 'space',
-      "\    ],
-      "\},
-      "\'basic_option': {
-      "\    'ErrorSign': '●',
-      "\    'WarningSign': '●',
-      "\},
-"\}
-"let g:HicusLineMode = {
-      "\'n':      [ 'NORMAL', 'normalmode', { 'infos': 'normalinfos', }, ],
-      "\'i':      [ 'INSERT', 'insertmode', { 'infos': 'otherinfos',  }, ],
-      "\'R':      [ 'REPLACE', 'replacemode', { 'infos': 'otherinfos',  }, ],
-      "\'v':      [ 'VISUAL', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\'V':      [ 'L-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\"\<C-v>": [ 'B-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\'c':      [ 'COMMAND', 'commandmode', { 'infos': 'otherinfos',  }, ],
-      "\'s':      [ 'SELECT', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\'S':      [ 'L-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\"\<C-s>": [ 'B-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\'t':      [ 'TERMINAL', 'normalmode', { 'infos': 'normalinfos',  }, ],
-"\}
-"let g:HicusColor = {
-      "\'StatusLine':     [ 'none' ,'#238E23', '#545454', ],
-      "\'normalmode':     [ 'bold' ,'#DB70DB', '#D9D9F3', ],
-      "\'insertmode':     [ 'bold', '#DB70DB', '#70DBDB', ],
-      "\'visualmode':     [ 'bold', '#DB70DB', '#FF6699', ],
-      "\'replacemode':    [ 'bold', '#DB70DB', '#9370DB', ],
-      "\'commandmode':    [ 'bold', '#C6C6C6', '#FF7F00' ],
-      "\'normalinfos':    [ 'none', '#FFFFFF', '#6272A4', ],
-      "\'otherinfos':     [ 'none', '#FF6EC7', '#BC8F8F', ],
-      "\'ErrorStatus':    [ 'none', '#FF0033', '#44475A', ],
-      "\'WarningStatus':  [ 'none', '#FFCC00', '#44475A', ],
-"\}
+" ===
+" === Run My Code
+" ===
+nnoremap <LEADER>r :call CompileRunCode()<CR>
+func! CompileRunCode()
+    exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'vim'
+		exec "source %"
+	elseif &filetype == 'cpp'
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+        :res -15
+		:term ./%<
+	elseif &filetype == 'java'
+		exec "!javac %"
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		set splitbelow
+		:sp
+		:term python3 %
+	elseif &filetype == 'html'
+		silent! exec "!".g:mkdp_browser." % &"
+	elseif &filetype == 'markdown'
+		exec "MarkdownPreview"
+	elseif &filetype == 'tex'
+		silent! exec "VimtexStop"
+		silent! exec "VimtexCompile"
+	elseif &filetype == 'dart'
+		CocCommand flutter.run
+	elseif &filetype == 'go'
+		set splitbelow
+		:sp
+		:term go run %
+	endif
+endfunc
+
+" ===
+" === split windows settings
+" ===
+nnoremap <LEADER>sr :set splitright<CR>:vsplit<CR>
+nnoremap <LEADER>sl :set nosplitright<CR>:vsplit<CR>
+nnoremap <LEADER>su :set nosplitbelow<CR>:split<CR>
+nnoremap <LEADER>sd :set splitbelow<CR>:split<CR>
+
+" ===
+" === move between windows
+" ===
+nnoremap <LEADER>gr <C-w>l
+nnoremap <LEADER>gu <C-w>k
+nnoremap <LEADER>gd <C-w>j
+nnoremap <LEADER>gl <C-w>h
+
+" ===
+" === resize the windows
+" ===
+nnoremap <LEADER><up> :res +5<CR>
+nnoremap <LEADER><down> :res -5<CR>
+nnoremap <LEADER><right> :vertical resize-5<CR>
+nnoremap <LEADER><left> :vertical resize+5<CR>
+
+" ===
+" === new tab and move between tabs
+" ===
+nnoremap <LEADER>tt :tabe<CR>
+nnoremap <LEADER>tl :-tabnext<CR>
+nnoremap <LEADER>tr :+tabnext<CR>
+nnoremap <LEADER>sc :set spell!<CR>
+
+" ===
+" === set a pattern to find
+" ===
+nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+nnoremap tx :r !figlet
+
+" ===
+" === markdown toc
+" ===
+nnoremap <LEADER>mt :GenTocGFM<CR>
+nnoremap <LEADER>mtc :RemoveToc<CR>
+
+" ===
+" === Autoformat
+" ===
+nnoremap <LEADER>f  :Autoformat<CR>
+
+" ===
+" === delete a line
+" ===
+nnoremap - dd
+
+" ===
+" === count how many characters
+" ===
+nnoremap <LEADER>hc :%s/./&/g<CR>$
