@@ -3,6 +3,11 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+
+" ===
+" === don't show insert more than once
+" ===
+
 set noshowmode
 
 set termguicolors
@@ -143,8 +148,8 @@ nnoremap <LEADER>gd <C-w>j
 nnoremap <LEADER>gl <C-w>h
 nnoremap <LEADER><up> :res +5<CR>
 nnoremap <LEADER><down> :res -5<CR>
-nnoremap <LEADER><left> :vertical resize-5<CR>
-nnoremap <LEADER><right> :vertical resize+5<CR>
+nnoremap <LEADER><right> :vertical resize-5<CR>
+nnoremap <LEADER><left> :vertical resize+5<CR>
 " TabBinding
 nnoremap <LEADER>tt :tabe<CR>
 nnoremap <LEADER>tl :-tabnext<CR>
@@ -259,6 +264,7 @@ Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'lilydjwg/fcitx.vim'
 
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
