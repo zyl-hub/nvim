@@ -267,6 +267,7 @@ Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
+Plug 'mhinz/vim-startify'
 
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
@@ -506,3 +507,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols.readonly = ''
     let g:airline_symbols.linenr = '☰'
     let g:airline_symbols.maxlinenr = ''
+" ===
+" === startify remove the bull when shartup
+" ===
+let g:startify_custom_header = []
