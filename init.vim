@@ -562,7 +562,6 @@ nnoremap <LEADER>sc :set spell!<CR>
 " ===
 nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 nnoremap tx :r !figlet
-
 " ===
 " === markdown toc
 " ===
