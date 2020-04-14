@@ -269,8 +269,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'mhinz/vim-startify'
 
-" Auto Pairs
-Plug 'jiangmiao/auto-pairs'
+" Auto Pairs was statisfied by coc-pairs
 call plug#end()
 
 
