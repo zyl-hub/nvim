@@ -170,6 +170,8 @@ Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to 
 Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
 Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
 
+" debugger
+Plug 'idanarye/vim-vebugger'
 " Dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
@@ -180,6 +182,7 @@ Plug 'makerj/vim-pdf'
 " Plug 'rhysd/open-pdf.vim'
 
 " Editor Enhancement
+Plug 'luochen1990/rainbow'
 Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
@@ -190,6 +193,10 @@ Plug 'mhinz/vim-startify'
 call plug#end()
 
 
+" ===
+" === rainbow
+" ===
+let g:rainbow_active = 1
 
 "" ===
 "" === HicusLine
