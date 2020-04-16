@@ -100,6 +100,10 @@ let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " ===
 call plug#begin('~/.vim/plugged')
 
+" Debugger
+Plug 'idanarye/vim-vebugger'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
 Plug 'RRethy/vim-illuminate'
 " To be developed
 " Plug 'Styadev/HicusLine'
@@ -113,9 +117,6 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sysc'}
 
 " Taglist
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
-
-" Debugger
-Plug 'puremourning/vimspector', {'do': './install_gadget.py --all'}
 
 " Error checking, handled by coc
 
@@ -160,9 +161,6 @@ Plug 'Chiel92/vim-autoformat'
 " Bookmarks
 Plug 'kshenoy/vim-signature'
 
-" conda
-" Plug 'cjrh/vim-conda'
-" 
 " Other useful utilities
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim' " distraction free writing mode
@@ -170,8 +168,6 @@ Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to 
 Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
 Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
 
-" debugger
-Plug 'idanarye/vim-vebugger'
 " Dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
