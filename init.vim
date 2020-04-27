@@ -7,6 +7,7 @@ filetype plugin indent on
 set noshowmode
 " true color
 set termguicolors
+set clipboard+=unnamedplus
 hi illuminatedWord cterm=underline gui=underline
 " ===
 " === now I use true color but if the terminal don't support true color,the following can be used
@@ -90,7 +91,7 @@ source ~/.config/nvim/md-snippets.vim
 " === Choose hosts
 " ===
 let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3.8'
 let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 
 
@@ -99,10 +100,10 @@ let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " === All the Plugins
 " ===
 call plug#begin('~/.vim/plugged')
-
+Plug 'denstiny/Terslation'
+Plug 'SpringHan/Terslation.vim'
 " Debugger
-Plug 'idanarye/vim-vebugger'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'puremourning/vimspector'
 
 Plug 'RRethy/vim-illuminate'
 " To be developed
@@ -585,3 +586,9 @@ nnoremap - dd
 " === count how many characters
 " ===
 nnoremap <LEADER>hc :%s/./&/g<CR>$
+
+" ===
+" === clipboard
+" ===
+vnoremap <LEADER>y "+y
+nnoremap <LEADER>p "+p
