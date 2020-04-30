@@ -1,8 +1,8 @@
 set nocompatible
 filetype on
 filetype indent on
-filetype plugin on
-filetype plugin indent on
+
+
 " don't show insert more than once
 set noshowmode
 " true color
@@ -189,6 +189,11 @@ Plug 'mhinz/vim-startify'
 " Auto Pairs was statisfied by coc-pairs
 call plug#end()
 
+
+" ===
+" === terslation
+" ===
+let g:TerslationFloatWin = 1
 
 " ===
 " === rainbow
@@ -592,3 +597,8 @@ nnoremap <LEADER>hc :%s/./&/g<CR>$
 " ===
 vnoremap <LEADER>y "+y
 nnoremap <LEADER>p "+p
+
+" ===
+" === Terslation
+" ===
+nnoremap <LEADER>ts :TerslationWordTrans<CR>

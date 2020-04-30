@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/yunlang/价值迭代&QLearn&SARSA/homework3_commented'
 let g:netrw_dirhist_0='/home/yunlang/MyConfig/scripts'
 let g:netrw_dirhist_9='/home/yunlang/cppPrimerPlus-six-'
 let g:netrw_dirhist_8='/home/yunlang/problem1'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/home/yunlang/.config/clash'
 let g:netrw_dirhist_4='/home/yunlang/.vim/plugged/HicusLine/plugin'
 let g:netrw_dirhist_3='/home/yunlang/.vim/plugged/HicusLine'
 let g:netrw_dirhist_2='/home/yunlang/.vim/plugged/HicusLine/plugin'
-let g:netrw_dirhist_1='/home/yunlang/.vim/plugged/HicusLine'
