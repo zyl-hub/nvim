@@ -1,3 +1,9 @@
+"__   ___     
+"\ \ / / |    
+" \ V /| |    
+"  | | | |___ 
+"  |_| |_____|
+             
 set nocompatible
 filetype on
 filetype indent on
