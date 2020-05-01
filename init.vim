@@ -602,3 +602,8 @@ nnoremap <LEADER>p "+p
 " === Terslation
 " ===
 nnoremap <LEADER>ts :TerslationWordTrans<CR>
+
+" ===
+" === tie anchor
+" ===
+nnoremap <LEADER>ta i<++><ESC>
