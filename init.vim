@@ -109,7 +109,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'denstiny/Terslation'
 Plug 'SpringHan/Terslation.vim'
 " Debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 Plug 'RRethy/vim-illuminate'
 " To be developed
@@ -192,7 +192,10 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'mhinz/vim-startify'
+" Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
+" coc-pairs cannot be used because it work bad on c project
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
