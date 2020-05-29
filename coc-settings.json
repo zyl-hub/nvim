@@ -1,5 +1,6 @@
 {
     "explorer.icon.enableNerdfont": true,
+    "python.jediEnabled": false,
     "coc.preferences.extensionUpdateCheck": "weekly",
     "diagnostic.virtualText": true,
     "codeLens.enable": true,

@@ -129,6 +129,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'codota/tabnine-vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
