@@ -15,5 +15,6 @@ autocmd Filetype markdown inoremap <buffer> ,1 #<Space><Enter><Enter><++><Esc>kk
 autocmd Filetype markdown inoremap <buffer> ,2 ##<Space><Enter><Enter><++><Esc>kkA
 autocmd Filetype markdown inoremap <buffer> ,3 ###<Space><Enter><Enter><++><Esc>kkA
 autocmd Filetype markdown inoremap <buffer> ,4 ####<Space><Enter><Enter><++><Esc>kkA
+autocmd Filetype markdown inoremap <buffer> ,5 #####<Space><Enter><Enter><++><Esc>kkA
 autocmd Filetype markdown inoremap <buffer> ,l --------<Enter>
 "autocmd Filetype markdown inoremap <buffer> <C-q> <C-q>,
