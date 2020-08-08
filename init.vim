@@ -106,8 +106,9 @@ let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " === All the Plugins
 " ===
 call plug#begin('~/.vim/plugged')
-Plug 'denstiny/Terslation'
-Plug 'SpringHan/Terslation.vim'
+Plug 'voldikss/vim-translator'
+"Plug 'denstiny/Terslation'
+"Plug 'SpringHan/Terslation.vim'
 " Debugger
 " Plug 'puremourning/vimspector'
 
@@ -300,6 +301,9 @@ if !exists('g:airline_symbols')
 " === startify remove the bull when shartup
 " ===
 let g:startify_custom_header = []
+let g:startify_bookmarks = [
+            \'/home/yunlang/.config/nvim/init.vim',
+            \]
 " ===
 " === FastFold
 " ===
@@ -611,9 +615,16 @@ nnoremap <LEADER>p "+p
 " ===
 " === Terslation
 " ===
-nnoremap <LEADER>ts :TerslationWordTrans<CR>
+"nnoremap <LEADER>td :TerslationWordTrans<CR>
 
 " ===
 " === tie anchor
 " ===
 nnoremap <LEADER>ta i<++><ESC>
+
+" ===
+" === display translation
+" ===
+nmap <silent> <LEADER>ts <Plug>TranslateW
+nmap <silent> <LEADER>tsv <Plug>TranslateWV
+
