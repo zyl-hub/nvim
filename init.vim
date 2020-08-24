@@ -92,7 +92,7 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-"source ~/.config/nvim/md-snippets.vim
+source ~/.config/nvim/md-wiki.vim
 " ===
 " === Choose hosts
 " ===
@@ -108,7 +108,7 @@ let g:ruby_host_prog = '/home/yl/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " ===
 call plug#begin('~/.vim/plugged')
 " vim wiki to make my notes tidy"
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 
 Plug 'voldikss/vim-translator'
@@ -202,7 +202,7 @@ Plug 'lilydjwg/fcitx.vim'
 " Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
 " coc-pairs cannot be used because it work bad on c project
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
@@ -636,9 +636,9 @@ nnoremap <LEADER>ta i<++><ESC>
 nmap <silent> <LEADER>ts <Plug>TranslateW
 nmap <silent> <LEADER>tsv <Plug>TranslateWV
 
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_table_mappings = 0
+"let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      "\ 'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_table_mappings = 0
 "let g:vimwiki_global_ext = 0
 "let g:vimwiki_ext2syntax = {}
 
