@@ -266,7 +266,7 @@ let g:rainbow_active = 1
 " ===
 " === airline
 " ===
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_spacemacs'
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
@@ -635,4 +635,4 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
-nnoremap <LEADER>l <Plug>VimwikiNextLink
+let g:vimwiki_table_mappings = 0
