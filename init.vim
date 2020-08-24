@@ -542,8 +542,6 @@ func! CompileRunCode()
         silent! exec "!".g:mkdp_browser." % &"
     elseif &filetype == 'markdown'
         exec "MarkdownPreview"
-    elseif &filetype == 'vimwiki'
-        exec "MarkdownPreview"
     elseif &filetype == 'tex'
         silent! exec "VimtexStop"
         silent! exec "VimtexCompile"
@@ -646,6 +644,6 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 " === make delete a word more comfortable
 " === some modify to make me change between buffers
 " ===
-nnoremap l daw
+"nnoremap l daw
 nnoremap <LEADER>n :bn<CR>
 nnoremap wq :wqa<CR>
