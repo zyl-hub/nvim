@@ -266,7 +266,8 @@ let g:rainbow_active = 1
 " ===
 " === airline
 " ===
-"let g:airline#extensions#tabline#enabled = 1
+" the tabline don't looks well, so I remove it to have better looking
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_spacemacs'
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
