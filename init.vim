@@ -639,10 +639,13 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_table_mappings = 0
-" let g:vimwiki_global_ext = 0
+"let g:vimwiki_global_ext = 0
+"let g:vimwiki_ext2syntax = {}
 
 " ===
 " === make delete a word more comfortable
+" === some modify to make me change between buffers
 " ===
 nnoremap l daw
-
+nnoremap <LEADER>n :bn<CR>
+nnoremap wq :wqa<CR>
