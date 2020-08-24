@@ -542,6 +542,8 @@ func! CompileRunCode()
         silent! exec "!".g:mkdp_browser." % &"
     elseif &filetype == 'markdown'
         exec "MarkdownPreview"
+    elseif &filetype == 'vimwiki'
+        exec "MarkdownPreview"
     elseif &filetype == 'tex'
         silent! exec "VimtexStop"
         silent! exec "VimtexCompile"
@@ -637,3 +639,10 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_table_mappings = 0
+" let g:vimwiki_global_ext = 0
+
+" ===
+" === make delete a word more comfortable
+" ===
+nnoremap l daw
+
