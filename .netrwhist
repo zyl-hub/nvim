@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/usr/include/EGL'
 let g:netrw_dirhist_7='/home/yl/vimwiki/Code/CPPP/3.7test'
 let g:netrw_dirhist_6='/home/yl/Downloads'
 let g:netrw_dirhist_5='/home/yl/vimwiki/Code/CPPP/3.7test'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_2='/home/yl/Downloads'
 let g:netrw_dirhist_1='/home/yl/vimwiki/Code/CPPP/3.7test'
 let g:netrw_dirhist_0='/home/yl/vimwiki/Code/CPPP/2.7test'
 let g:netrw_dirhist_9='/home/yl/vimwiki'
-let g:netrw_dirhist_8='/home/yl/introRL'
