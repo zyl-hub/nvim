@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/yl/introRL'
+let g:netrw_dirhist_7='/home/yl/vimwiki'
 let g:netrw_dirhist_6='/home/yunlang/VSDRL-master/VSDRL-master'
 let g:netrw_dirhist_5='/home/yunlang/VSDRL-master'
 let g:netrw_dirhist_4='/home/yunlang/VSDRL-master/VSDRL-master'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/home/yunlang/TFT/src/utility'
 let g:netrw_dirhist_1='/home/yunlang/Downloads/snake-master/snake-master/snake'
 let g:netrw_dirhist_0='/home/yunlang/Downloads/snake-master/snake-master'
 let g:netrw_dirhist_9='/home/yunlang/Downloads/snake-master'
-let g:netrw_dirhist_8='/home/yunlang/TFT/src/utility'
-let g:netrw_dirhist_7='/home/yunlang/Atasks/化学ppt'

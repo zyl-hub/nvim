@@ -92,13 +92,14 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-source ~/.config/nvim/md-snippets.vim
+"source ~/.config/nvim/md-snippets.vim
 " ===
 " === Choose hosts
 " ===
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3.8'
-let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
+"let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/opt/anaconda/bin/python3.8'
+"let g:python3_host_prog = '/usr/bin/python3.8'
+let g:ruby_host_prog = '/home/yl/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 
 
 
@@ -106,6 +107,10 @@ let g:ruby_host_prog = '/home/yunlang/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 " === All the Plugins
 " ===
 call plug#begin('~/.vim/plugged')
+" vim wiki to make my notes tidy"
+Plug 'vimwiki/vimwiki'
+
+
 Plug 'voldikss/vim-translator'
 "Plug 'denstiny/Terslation'
 "Plug 'SpringHan/Terslation.vim'
@@ -193,7 +198,7 @@ Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 " Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
 " coc-pairs cannot be used because it work bad on c project
@@ -300,10 +305,10 @@ if !exists('g:airline_symbols')
 " ===
 " === startify remove the bull when shartup
 " ===
-let g:startify_custom_header = []
-let g:startify_bookmarks = [
-            \'/home/yunlang/.config/nvim/init.vim',
-            \]
+"let g:startify_custom_header = []
+"let g:startify_bookmarks = [
+            "\'/home/yunlang/.config/nvim/init.vim',
+            "\]
 " ===
 " === FastFold
 " ===
@@ -628,3 +633,6 @@ nnoremap <LEADER>ta i<++><ESC>
 nmap <silent> <LEADER>ts <Plug>TranslateW
 nmap <silent> <LEADER>tsv <Plug>TranslateWV
 
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+nnoremap <LEADER>l <Plug>VimwikiNextLink
