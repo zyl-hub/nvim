@@ -116,7 +116,9 @@ Plug 'voldikss/vim-translator'
 "Plug 'denstiny/Terslation'
 "Plug 'SpringHan/Terslation.vim'
 " Debugger
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
+"Plug 'skywind3000/asynctasks.vim'
+"Plug 'skywind3000/asyncrun.vim'
 
 Plug 'RRethy/vim-illuminate'
 " To be developed
@@ -520,13 +522,13 @@ nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
     exec "w"
     if &filetype == 'c'
-        exec "!g++ % -o %<"
+        exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
         exec "!time ./%<"
     elseif &filetype == 'vim'
         exec "source %"
     elseif &filetype == 'cpp'
         set splitbelow
-        exec "!g++ -std=c++11 % -Wall -o %<"
+        exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<; ./%<"
         :sp
         :res -15
         :term ./%<
@@ -648,3 +650,21 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 nnoremap l daw
 nnoremap <LEADER>n :bn<CR>
 nnoremap wq :wqa<CR>
+
+" ===
+" === asyncrun
+" ===
+"let g:asyncrun_open = 6
+let g:vimspector_enable_mappings = 'HUMAN'
+function! s:read_template_into_buffer(template)
+	" has to be a function to avoid the extra space fzf#run insers otherwise
+	execute '0r ~/.config/nvim/vimspector-json/'.a:template
+endfunction
+command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
+			\   'source': 'ls -1 ~/.config/nvim/vimspector-json',
+			\   'down': 20,
+			\   'sink': function('<sid>read_template_into_buffer')
+			\ })
+nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
+nnoremap <F1> :call vimspector#StepInto()<CR>
+nnoremap <F7> :call vimspector#Reset()<CR>
