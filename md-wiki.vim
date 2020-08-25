@@ -15,10 +15,10 @@ endfunction
 func! TodoList()
     if getline('.') == ''
         execute "normal!i- [ ] "
-    elseif getline('.') =~ '^- [X..'
-        execute "normal!f]dawi "
+    elseif getline('.') =~ '^- [X\+'
+        execute "normal!^f]dawdawa ] \<esc>$"
     else
-        execute "normal!f]dawiX]"
+        execute "normal!^f]dawiX]\<esc>$"
     endif
 endfunction
 autocmd Filetype markdown nnoremap <TAB> /# [*<CR>:nohlsearch<CR>
