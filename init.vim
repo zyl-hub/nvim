@@ -92,7 +92,7 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-source ~/.config/nvim/md-wiki.vim
+"source ~/.config/nvim/md-wiki.vim
 " ===
 " === Choose hosts
 " ===
@@ -109,6 +109,7 @@ let g:ruby_host_prog = '/home/yl/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 call plug#begin('~/.vim/plugged')
 " vim wiki to make my notes tidy"
 " Plug 'vimwiki/vimwiki'
+Plug 'git@github.com:zyl-hub/Lightwiki.git'
 
 
 Plug 'voldikss/vim-translator'
