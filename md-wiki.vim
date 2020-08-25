@@ -17,9 +17,9 @@ func! TodoList()
     if getline('.') == ''
         execute "normal!i- [ ] "
     elseif getline('.') =~ '^- [X\+'
-        execute "normal!^f]dawdawa ] \<esc>$"
+        execute "normal!^f]a\<BS>\<BS> ]\<esc>$"
     else
-        execute "normal!^f]dawiX]\<esc>$"
+        execute "normal!^f]a\<BS>\<BS>X]\<esc>$"
     endif
 endfunction
 
