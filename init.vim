@@ -644,6 +644,6 @@ nmap <silent> <LEADER>tsv <Plug>TranslateWV
 " === make delete a word more comfortable
 " === some modify to make me change between buffers
 " ===
-"nnoremap l daw
+nnoremap l daw
 nnoremap <LEADER>n :bn<CR>
 nnoremap wq :wqa<CR>
