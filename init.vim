@@ -92,7 +92,7 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-"source ~/.config/nvim/md-wiki.vim
+"source ~/.config/nvim/md-snippets.vim
 " ===
 " === Choose hosts
 " ===
