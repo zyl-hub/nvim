@@ -92,7 +92,7 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-"source ~/.config/nvim/md-snippets.vim
+"source ~/.config/nvim/markdown.vim
 " ===
 " === Choose hosts
 " ===
@@ -110,6 +110,9 @@ call plug#begin('~/.vim/plugged')
 " vim wiki to make my notes tidy"
 " Plug 'vimwiki/vimwiki'
 Plug 'git@github.com:zyl-hub/Lightwiki.git'
+
+"Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
 
 
 Plug 'voldikss/vim-translator'
@@ -668,3 +671,9 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
+
+" ===
+" === to make markdown easy looking in vim
+" ===
+autocmd Filetype markdown set syntax=markdown
+autocmd Filetype markdown set conceallevel=2
