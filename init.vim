@@ -617,3 +617,8 @@ nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 " ===
 nnoremap <LEADER>gl :Agit<CR>
 let g:agit_no_default_mappings = 1
+
+" ===
+" === Lightwiki
+" ===
+let g:ApplyBSkillBuffer = 1
