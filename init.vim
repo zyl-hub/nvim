@@ -1,9 +1,9 @@
-"__   ___     
-"\ \ / / |    
-" \ V /| |    
-"  | | | |___ 
+"__   ___
+            "\ \ / / |
+" \ V /| |
+"  | | | |___
 "  |_| |_____|
-             
+
 set nocompatible
 filetype on
 filetype indent on
@@ -46,7 +46,7 @@ set incsearch
 set ignorecase
 set smartcase
 set number
-set norelativenumber
+set relativenumber
 set cursorline
 set wrap
 set showcmd
@@ -121,13 +121,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ===
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-
-" ===
-" === Undo Tree
-" ===
-" TODO:  <27-08-20, yl> "
-Plug 'mbbill/undotree/'
 
 
 " ===
@@ -243,45 +236,45 @@ let g:rainbow_active = 1
 "let g:HicusLineEnabled = 1
 "let g:HicusColorSetWay = 1
 "let g:HicusLine = {
-      "\'active': {
-      "\    'left': [ 'modehighlight', 'space', 'mode', 'space', 'spell',
-      "\              '%#infos#', 'gitinfo', 0, 'modified', 'filename',
-      "\              'readonly', 'space', '%#ErrorStatus#', 'errorstatus',
-      "\              'space', '%#WarningStatus#', 'warningstatus', 0, ],
-      "\    'right': [ 'filetype2', 'space', '%#infos#', 'fileencoding', 'space',
-      "\               'fileformat', 'modehighlight', 'space', 'linenumber', ':',
-      "\               'bufferlinesnumber', 'space', 'windowpercentage', 'space',
-      "\    ],
-      "\},
-      "\'basic_option': {
-      "\    'ErrorSign': '●',
-      "\    'WarningSign': '●',
-      "\},
+"\'active': {
+            "\    'left': [ 'modehighlight', 'space', 'mode', 'space', 'spell',
+            "\              '%#infos#', 'gitinfo', 0, 'modified', 'filename',
+            "\              'readonly', 'space', '%#ErrorStatus#', 'errorstatus',
+            "\              'space', '%#WarningStatus#', 'warningstatus', 0, ],
+            "\    'right': [ 'filetype2', 'space', '%#infos#', 'fileencoding', 'space',
+            "\               'fileformat', 'modehighlight', 'space', 'linenumber', ':',
+            "\               'bufferlinesnumber', 'space', 'windowpercentage', 'space',
+            "\    ],
+"\},
+"\'basic_option': {
+            "\    'ErrorSign': '●',
+            "\    'WarningSign': '●',
+"\},
 "\}
 "let g:HicusLineMode = {
-      "\'n':      [ 'NORMAL', 'normalmode', { 'infos': 'normalinfos', }, ],
-      "\'i':      [ 'INSERT', 'insertmode', { 'infos': 'otherinfos',  }, ],
-      "\'R':      [ 'REPLACE', 'replacemode', { 'infos': 'otherinfos',  }, ],
-      "\'v':      [ 'VISUAL', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\'V':      [ 'L-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\"\<C-v>": [ 'B-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-      "\'c':      [ 'COMMAND', 'commandmode', { 'infos': 'otherinfos',  }, ],
-      "\'s':      [ 'SELECT', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\'S':      [ 'L-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\"\<C-s>": [ 'B-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-      "\'t':      [ 'TERMINAL', 'normalmode', { 'infos': 'normalinfos',  }, ],
+"\'n':      [ 'NORMAL', 'normalmode', { 'infos': 'normalinfos', }, ],
+"\'i':      [ 'INSERT', 'insertmode', { 'infos': 'otherinfos',  }, ],
+"\'R':      [ 'REPLACE', 'replacemode', { 'infos': 'otherinfos',  }, ],
+"\'v':      [ 'VISUAL', 'visualmode', { 'infos': 'otherinfos',  }, ],
+"\'V':      [ 'L-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
+"\"\<C-v>": [ 'B-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
+"\'c':      [ 'COMMAND', 'commandmode', { 'infos': 'otherinfos',  }, ],
+"\'s':      [ 'SELECT', 'normalmode', { 'infos': 'normalinfos',  }, ],
+"\'S':      [ 'L-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
+"\"\<C-s>": [ 'B-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
+"\'t':      [ 'TERMINAL', 'normalmode', { 'infos': 'normalinfos',  }, ],
 "\}
 "let g:HicusColor = {
-      "\'StatusLine':     [ 'none' ,'#238E23', '#545454', ],
-      "\'normalmode':     [ 'bold' ,'#DB70DB', '#D9D9F3', ],
-      "\'insertmode':     [ 'bold', '#DB70DB', '#70DBDB', ],
-      "\'visualmode':     [ 'bold', '#DB70DB', '#FF6699', ],
-      "\'replacemode':    [ 'bold', '#DB70DB', '#9370DB', ],
-      "\'commandmode':    [ 'bold', '#C6C6C6', '#FF7F00' ],
-      "\'normalinfos':    [ 'none', '#FFFFFF', '#6272A4', ],
-      "\'otherinfos':     [ 'none', '#FF6EC7', '#BC8F8F', ],
-      "\'ErrorStatus':    [ 'none', '#FF0033', '#44475A', ],
-      "\'WarningStatus':  [ 'none', '#FFCC00', '#44475A', ],
+"\'StatusLine':     [ 'none' ,'#238E23', '#545454', ],
+"\'normalmode':     [ 'bold' ,'#DB70DB', '#D9D9F3', ],
+"\'insertmode':     [ 'bold', '#DB70DB', '#70DBDB', ],
+"\'visualmode':     [ 'bold', '#DB70DB', '#FF6699', ],
+"\'replacemode':    [ 'bold', '#DB70DB', '#9370DB', ],
+"\'commandmode':    [ 'bold', '#C6C6C6', '#FF7F00' ],
+"\'normalinfos':    [ 'none', '#FFFFFF', '#6272A4', ],
+"\'otherinfos':     [ 'none', '#FF6EC7', '#BC8F8F', ],
+"\'ErrorStatus':    [ 'none', '#FF0033', '#44475A', ],
+"\'WarningStatus':  [ 'none', '#FFCC00', '#44475A', ],
 "\}
 
 " ===
@@ -291,46 +284,46 @@ let g:rainbow_active = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_spacemacs'
 if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
+    let g:airline_symbols = {}
+endif
 
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.maxlinenr = '㏑'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
-    
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 
 " ===
 " === startify remove the bull when shartup
 " ===
 "let g:startify_custom_header = []
 "let g:startify_bookmarks = [
-            "\'/home/yunlang/.config/nvim/init.vim',
-            "\]
+"\'/home/yunlang/.config/nvim/init.vim',
+"\]
 " ===
 " === FastFold
 " ===
@@ -520,7 +513,6 @@ nnoremap <LEADER>ta i<++><ESC>
 " === make delete a word more comfortable
 " === some modify to make me change between buffers
 " ===
-nnoremap l daw
 nnoremap <LEADER>n :bn<CR>
 nnoremap wq :wqa<CR>
 
@@ -530,14 +522,14 @@ nnoremap wq :wqa<CR>
 "let g:asyncrun_open = 6
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
-	" has to be a function to avoid the extra space fzf#run insers otherwise
-	execute '0r ~/.config/nvim/vimspector-json/'.a:template
+    " has to be a function to avoid the extra space fzf#run insers otherwise
+    execute '0r ~/.config/nvim/vimspector-json/'.a:template
 endfunction
 command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
-			\   'source': 'ls -1 ~/.config/nvim/vimspector-json',
-			\   'down': 20,
-			\   'sink': function('<sid>read_template_into_buffer')
-			\ })
+            \   'source': 'ls -1 ~/.config/nvim/vimspector-json',
+            \   'down': 20,
+            \   'sink': function('<sid>read_template_into_buffer')
+            \ })
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
@@ -552,25 +544,25 @@ autocmd Filetype markdown set conceallevel=2
 " === coc settings
 " ===
 let g:coc_global_extensions = [
-    \ 'coc-json',
-    \ 'coc-vimlsp',
-    \ 'coc-marketplace',
-    \ 'coc-actions',
-    \ 'coc-clangd',
-    \ 'coc-explorer',
-    \ 'coc-translator',
-    \ 'coc-tabnine',
-    \ 'coc-snippets',
-    \ 'coc-python']
+            \ 'coc-json',
+            \ 'coc-vimlsp',
+            \ 'coc-marketplace',
+            \ 'coc-actions',
+            \ 'coc-clangd',
+            \ 'coc-explorer',
+            \ 'coc-translator',
+            \ 'coc-tabnine',
+            \ 'coc-snippets',
+            \ 'coc-python']
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -589,17 +581,17 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 nmap <LEADER>rn <Plug>(coc-rename)
 
 function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
+    execute 'CocCommand actions.open ' . a:type
 endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
@@ -649,3 +641,15 @@ autocmd Filetype agit nnoremap <buffer> <BS> :q<CR>
 " === Lightwiki
 " ===
 let g:ApplyBSkillBuffer = 1
+
+
+" ===
+" === colemak keybind enhancement
+" ===
+nnoremap u k
+vnoremap u k
+nnoremap e j
+vnoremap e j
+nnoremap l u
+nnoremap k <C-r>
+
