@@ -420,9 +420,10 @@ func! CompileRunCode()
     elseif &filetype == 'sh'
         :!time bash %
     elseif &filetype == 'python'
-        set splitbelow
-        :sp
-        :term python3 %
+        "set splitbelow
+        ":sp
+        ":term python3 %
+        exec ":CocCommand python.execInTerminal"
     elseif &filetype == 'html'
         silent! exec "!".g:mkdp_browser." % &"
     elseif &filetype == 'markdown'
