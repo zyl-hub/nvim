@@ -200,7 +200,7 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 " === Formatter
 " ===
 Plug 'Chiel92/vim-autoformat'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 
 
 " TODO:  <27-08-20, yl> "
@@ -573,6 +573,8 @@ let g:coc_global_extensions = [
             \ 'coc-clangd',
             \ 'coc-explorer',
             \ 'coc-translator',
+            \ 'coc-word',
+            \ 'coc-emoji',
             \ 'coc-tabnine',
             \ 'coc-snippets',
             \ 'coc-python']
