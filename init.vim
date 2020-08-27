@@ -17,6 +17,8 @@ set clipboard+=unnamedplus
 hi illuminatedWord cterm=underline gui=underline
 set hidden
 set foldcolumn=0
+set backup
+set bdir=~/backup
 "set nobackup
 "set nowritebackup
 set updatetime=100
@@ -216,7 +218,7 @@ Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'lilydjwg/fcitx.vim'
-"Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
 " coc-pairs cannot be used because it work bad on c project
@@ -325,9 +327,11 @@ let g:airline_symbols.maxlinenr = ''
 " === startify remove the bull when shartup
 " ===
 "let g:startify_custom_header = []
-"let g:startify_bookmarks = [
-"\'/home/yunlang/.config/nvim/init.vim',
-"\]
+let g:startify_bookmarks = [
+\'~/.config/nvim/init.vim',
+\]
+
+
 " ===
 " === FastFold
 " ===
@@ -571,6 +575,11 @@ function! s:check_back_space() abort
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
