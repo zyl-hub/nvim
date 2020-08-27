@@ -590,13 +590,13 @@ let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'yl'
 
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 " ==
 " == GitGutter
 " ==
 " let g:gitgutter_signs = 0
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 let g:gitgutter_sign_allow_clobber = 0
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
@@ -617,6 +617,8 @@ nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 " ===
 nnoremap <LEADER>gl :Agit<CR>
 let g:agit_no_default_mappings = 1
+" make it faster
+autocmd Filetype agit nnoremap <buffer> <BS> :q<CR>
 
 " ===
 " === Lightwiki
