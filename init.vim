@@ -15,45 +15,6 @@ set noshowmode
 set termguicolors
 set clipboard+=unnamedplus
 hi illuminatedWord cterm=underline gui=underline
-" ===
-" === now I use true color but if the terminal don't support true color,the following can be used
-" ===
-
-" status line
-" set laststatus=2
-"set statusline=
-"" set statusline+=%#PmenuSel#
-"" Filepath
-"" F for full
-"" f for filename
-"" set statusline+=%{StatuslineGit()}
-"set statusline+=%1*\ >^.^<\ 
-"set statusline+=%2*\ %F\ 
-"" m for [+]
-"" M for +
-"set statusline+=%3*%m
-"" left and right devide
-"set statusline+=%4*%=
-"" Change the color in the right
-"" set statusline+=%#CursorColumn#
-"set statusline+=%5*\ %y\ 
-"set statusline+=%6*\ %{&fileencoding?&fileencoding:&encoding}\ 
-"" Unix or windows
-"set statusline+=%7*\[%{&fileformat}\]\ 
-"" the % of the files
-"set statusline+=%8*\ %p%%\ 
-"set statusline+=%9*\ %{strftime('%H:%M')}\ 
-"" Line and column
-"" set statusline+=\ %l:%c
-"hi User1 cterm=none ctermfg=171 ctermbg=183
-"hi User2 cterm=none ctermfg=171 ctermbg=225
-"hi User3 cterm=none ctermfg=1 ctermbg=226
-"hi User4 cterm=none ctermfg=169 ctermbg=223
-"hi User5 cterm=none ctermfg=169 ctermbg=231
-"hi User6 cterm=none ctermfg=169 ctermbg=219
-"hi User7 cterm=none ctermfg=169 ctermbg=219
-"hi User8 cterm=none ctermfg=169 ctermbg=147
-"hi User9 cterm=none ctermfg=169 ctermbg=224
 set hidden
 set foldcolumn=0
 "set nobackup
@@ -90,7 +51,7 @@ set cursorline
 set wrap
 set showcmd
 set wildmenu
-"source ~/.config/nvim/markdown.vim
+
 " ===
 " === Choose hosts
 " ===
@@ -101,73 +62,137 @@ let g:ruby_host_prog = '/home/yl/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 
 
 
-" ===
-" === All the Plugins
-" ===
 call plug#begin('~/.config/nvim/plugged')
-" vim wiki to make my notes tidy"
-" Plug 'vimwiki/vimwiki'
+
+
+" ===
+" === Light wiki to make my notes tidy"
+" ===
 Plug 'git@github.com:zyl-hub/Lightwiki.git'
 
-" Debugger
+
+" ===
+" === Debugger
+" ===
 Plug 'puremourning/vimspector'
+
+
+" ===
+" === work flow
+" ===
+" TODO:  <27-08-20, yl> "
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
 
+
+" ===
+" ===
+" ===
+" TODO:  <27-08-20, yl> "
 Plug 'RRethy/vim-illuminate'
 
+
+" ===
+" === status line
+" ===
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" File navigation
+
+" ===
+" === File navigation
+" ===
 Plug 'junegunn/fzf.vim'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sysc'}
+
 
 " Taglist
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
 
-" Error checking, handled by coc
 
-" Auto Complete
+" ===
+" === make vim like vscode
+" ===
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'codota/tabnine-vim'
 
-" Snippets
+
+" ===
+" === Snippets make life easier
+" ===
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Undo Tree
+
+" ===
+" === Undo Tree
+" ===
+" TODO:  <27-08-20, yl> "
 Plug 'mbbill/undotree/'
 
-" Other visual enhancement
+
+" ===
+" === Other visual enhancement
+" ===
+" TODO:  <27-08-20, yl> "
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/vim-cursorword'
 
-" Git
+
+" ===
+" === Git
+" ===
 Plug 'rhysd/conflict-marker.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 
-" HTML, CSS, JavaScript, PHP, JSON, etc.
-Plug 'elzr/vim-json'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
+
+" ===
+" === preview color in vim
+" ===
+" Plug 'hail2u/vim-css3-syntax'
 Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'pangloss/vim-javascript', { 'for' :['javascript', 'vim-plug'] }
-Plug 'mattn/emmet-vim'
 
-" Python
-Plug 'vim-scripts/indentpython.vim'
 
-" Markdown
+" ===
+" === Python
+" ===
+Plug 'Vimjas/vim-python-pep8-indent'
+
+
+" ===
+" === maybe
+" ===
+" TODO:  <27-08-20, yl> "
+"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
+"Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
+
+
+" ===
+" === Markdown
+" ===
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 
-" Formatter
-Plug 'Chiel92/vim-autoformat'
 
+" ===
+" === bullet
+" ===
+" TODO:  <27-08-20, yl> "
+" maybe I want it
+"Plug 'dkarter/bullets.vim'
+
+
+" ===
+" === Formatter
+" ===
+Plug 'Chiel92/vim-autoformat'
+Plug 'jiangmiao/auto-pairs'
+
+
+" TODO:  <27-08-20, yl> "
+" below should be looked
 " Bookmarks
 Plug 'kshenoy/vim-signature'
 

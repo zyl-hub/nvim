@@ -44,7 +44,9 @@
     "list.previousKeymap": "<C-u>",
     "list.nextKeymap": "<C-e>",
     "coc.preferences.formatOnSaveFiletypes": [
-        "json"
+        "json",
+        "python",
+        "cpp"
     ],
     "python.jediEnabled": false,
     "explorer.width": 38,
