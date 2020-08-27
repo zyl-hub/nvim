@@ -78,6 +78,12 @@ Plug 'puremourning/vimspector'
 
 
 " ===
+" === undotree
+" ===
+" TODO:  <27-08-20, yl> "
+" make my own undo tree work easier
+" Plug 'mbbill/undotree'
+
 " === work flow
 " ===
 " TODO:  <27-08-20, yl> "
