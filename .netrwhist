@@ -1,6 +1,6 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =7
-let g:netrw_dirhist_7='/home/yl/introRL'
+let g:netrw_dirhist_7='/home/yl/MyConfig/dwm-newversion'
 let g:netrw_dirhist_6='/home/yl/vimwiki/Code/webCrawler'
 let g:netrw_dirhist_5='/home/yl/.config/nvim'
 let g:netrw_dirhist_4='/home/yl/ltximg'

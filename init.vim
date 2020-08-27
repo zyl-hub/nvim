@@ -328,8 +328,8 @@ let g:airline_symbols.maxlinenr = ''
 " ===
 "let g:startify_custom_header = []
 let g:startify_bookmarks = [
-\'~/.config/nvim/init.vim',
-\]
+            \'~/.config/nvim/init.vim',
+            \]
 
 
 " ===
@@ -576,9 +576,9 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -621,6 +621,7 @@ let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'yl'
 
+
 " ==
 " == GitGutter
 " ==
@@ -642,6 +643,7 @@ nnoremap <LEADER>gf :GitGutterFold<CR>
 nnoremap H :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
+
 
 " ===
 " === Agit
@@ -679,8 +681,8 @@ let g:undotree_WindowLayout = 2
 let g:undotree_DiffpanelHeight = 8
 let g:undotree_SplitWidth = 24
 function g:Undotree_CustomMap()
-	nmap <buffer> u <plug>UndotreeNextState
-	nmap <buffer> e <plug>UndotreePreviousState
-	nmap <buffer> U 5<plug>UndotreeNextState
-	nmap <buffer> E 5<plug>UndotreePreviousState
+    nmap <buffer> u <plug>UndotreeNextState
+    nmap <buffer> e <plug>UndotreePreviousState
+    nmap <buffer> U 5<plug>UndotreeNextState
+    nmap <buffer> E 5<plug>UndotreePreviousState
 endfunc
