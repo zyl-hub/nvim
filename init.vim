@@ -1,8 +1,9 @@
 "__   ___
-            "\ \ / / |
+"\ \ / / |
 " \ V /| |
 "  | | | |___
 "  |_| |_____|
+
 
 set nocompatible
 filetype on
@@ -65,6 +66,18 @@ let g:ruby_host_prog = '/home/yl/.gem/ruby/2.7.0/bin/neovim-ruby-host'
 
 
 call plug#begin('~/.config/nvim/plugged')
+
+
+" ===
+" === themes
+" ===
+Plug 'mhartington/oceanic-next'
+Plug 'ajmwagar/vim-deus'
+Plug 'dracula/vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'jnurmine/Zenburn'
+Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 
 
 " ===
@@ -686,3 +699,19 @@ function g:Undotree_CustomMap()
     nmap <buffer> U 5<plug>UndotreeNextState
     nmap <buffer> E 5<plug>UndotreePreviousState
 endfunc
+
+
+colorscheme OceanicNext
+"colorscheme deus
+"colorscheme dracula
+"colorscheme zenburn
+"colorscheme onedark
+
+"set background=light
+"set background=dark
+"colorscheme solarized8
+
+"let ayucolor="light"
+"let ayucolor="mirage"
+"let ayucolor="dark"
+"colorscheme ayu
