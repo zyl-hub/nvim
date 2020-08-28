@@ -189,6 +189,13 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 
 
 " ===
+" ===
+" ===
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsJumpBackwardTrigger="<C-n>"
+
+" ===
 " === bullet
 " ===
 " TODO:  <27-08-20, yl> "
@@ -219,14 +226,10 @@ Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
 Plug 'fadein/vim-FIGlet'
-
 " Other useful utilities
 Plug 'makerj/vim-pdf'
-" Plug 'rhysd/open-pdf.vim'
-
 " Editor Enhancement
 Plug 'luochen1990/rainbow'
-Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
@@ -240,72 +243,20 @@ call plug#end()
 
 
 " ===
-" === terslation
-" ===
-let g:TerslationFloatWin = 1
-
-" ===
 " === rainbow
 " ===
 let g:rainbow_active = 1
 
-"" ===
-"" === HicusLine
-"" ===
-"let g:HicusLineEnabled = 1
-"let g:HicusColorSetWay = 1
-"let g:HicusLine = {
-"\'active': {
-            "\    'left': [ 'modehighlight', 'space', 'mode', 'space', 'spell',
-            "\              '%#infos#', 'gitinfo', 0, 'modified', 'filename',
-            "\              'readonly', 'space', '%#ErrorStatus#', 'errorstatus',
-            "\              'space', '%#WarningStatus#', 'warningstatus', 0, ],
-            "\    'right': [ 'filetype2', 'space', '%#infos#', 'fileencoding', 'space',
-            "\               'fileformat', 'modehighlight', 'space', 'linenumber', ':',
-            "\               'bufferlinesnumber', 'space', 'windowpercentage', 'space',
-            "\    ],
-"\},
-"\'basic_option': {
-            "\    'ErrorSign': '●',
-            "\    'WarningSign': '●',
-"\},
-"\}
-"let g:HicusLineMode = {
-"\'n':      [ 'NORMAL', 'normalmode', { 'infos': 'normalinfos', }, ],
-"\'i':      [ 'INSERT', 'insertmode', { 'infos': 'otherinfos',  }, ],
-"\'R':      [ 'REPLACE', 'replacemode', { 'infos': 'otherinfos',  }, ],
-"\'v':      [ 'VISUAL', 'visualmode', { 'infos': 'otherinfos',  }, ],
-"\'V':      [ 'L-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-"\"\<C-v>": [ 'B-VISU', 'visualmode', { 'infos': 'otherinfos',  }, ],
-"\'c':      [ 'COMMAND', 'commandmode', { 'infos': 'otherinfos',  }, ],
-"\'s':      [ 'SELECT', 'normalmode', { 'infos': 'normalinfos',  }, ],
-"\'S':      [ 'L-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-"\"\<C-s>": [ 'B-SELE', 'normalmode', { 'infos': 'normalinfos',  }, ],
-"\'t':      [ 'TERMINAL', 'normalmode', { 'infos': 'normalinfos',  }, ],
-"\}
-"let g:HicusColor = {
-"\'StatusLine':     [ 'none' ,'#238E23', '#545454', ],
-"\'normalmode':     [ 'bold' ,'#DB70DB', '#D9D9F3', ],
-"\'insertmode':     [ 'bold', '#DB70DB', '#70DBDB', ],
-"\'visualmode':     [ 'bold', '#DB70DB', '#FF6699', ],
-"\'replacemode':    [ 'bold', '#DB70DB', '#9370DB', ],
-"\'commandmode':    [ 'bold', '#C6C6C6', '#FF7F00' ],
-"\'normalinfos':    [ 'none', '#FFFFFF', '#6272A4', ],
-"\'otherinfos':     [ 'none', '#FF6EC7', '#BC8F8F', ],
-"\'ErrorStatus':    [ 'none', '#FF0033', '#44475A', ],
-"\'WarningStatus':  [ 'none', '#FFCC00', '#44475A', ],
-"\}
 
 " ===
 " === airline
 " ===
-" the tabline don't looks well, so I remove it to have better looking
+" tabline make buffer easier
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_spacemacs'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -325,7 +276,6 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
-
 " powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -336,8 +286,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 
+
 " ===
-" === startify remove the bull when shartup
+" === startify
 " ===
 "let g:startify_custom_header = []
 let g:startify_bookmarks = [
@@ -345,25 +296,6 @@ let g:startify_bookmarks = [
             \]
 
 
-" ===
-" === FastFold
-" ===
-nmap zuz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-let g:fastfold_fold_movement_commands = [']z', '[z', 'ze', 'zu']
-let g:markdown_folding = 1
-let g:tex_fold_enabled = 1
-let g:vimsyn_folding = 'af'
-let g:xml_syntax_folding = 1
-let g:javaScript_fold = 1
-let g:sh_fold_enabled= 7
-let g:ruby_fold = 1
-let g:perl_fold = 1
-let g:perl_fold_blocks = 1
-let g:r_syntax_folding = 1
-let g:rust_fold = 1
-let g:php_folding = 1
 
 "   Markdown settings
 let g:mkdp_auto_start = 0
@@ -391,13 +323,6 @@ let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 
-" ===
-" === Snippets settings
-" ===
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips/']
 
 " ===
 " === rnvimr
@@ -413,6 +338,7 @@ highlight clear SignColumn
 nnoremap <LEADER>gy :Goyo<CR>
 nnoremap <LEADER>gyn :Goyo!<CR>
 nnoremap <LEADER><CR> :nohlsearch<CR>
+
 
 " ===
 " === Run My Code
@@ -457,21 +383,29 @@ func! CompileRunCode()
     endif
 endfunc
 
+
 " ===
 " === split windows settings
 " ===
-nnoremap <LEADER>sr :set splitright<CR>:vsplit<CR>
-nnoremap <LEADER>sl :set nosplitright<CR>:vsplit<CR>
+" colemak bindings
+"    u
+" n  e  i
+nnoremap <LEADER>si :set splitright<CR>:vsplit<CR>
+nnoremap <LEADER>sn :set nosplitright<CR>:vsplit<CR>
 nnoremap <LEADER>su :set nosplitbelow<CR>:split<CR>
-nnoremap <LEADER>sd :set splitbelow<CR>:split<CR>
+nnoremap <LEADER>se :set splitbelow<CR>:split<CR>
+
 
 " ===
 " === move between windows
 " ===
-nnoremap <LEADER>gr <C-w>l
+" colemak bindings
+"    u
+" n  e  i
+noremap <LEADER>gi <C-w>l
 nnoremap <LEADER>gu <C-w>k
-nnoremap <LEADER>gd <C-w>j
-nnoremap <LEADER>gl <C-w>h
+nnoremap <LEADER>ge <C-w>j
+nnoremap <LEADER>gn <C-w>h
 
 " ===
 " === resize the windows
