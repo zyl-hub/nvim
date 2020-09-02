@@ -29,8 +29,8 @@ set encoding=utf-8
 let &t_ut=''
 " tab or space that's a question
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set softtabstop=2
 set list
 set listchars=tab:▸\ ,trail:▫
@@ -189,11 +189,13 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 
 
 " ===
-" ===
+" === in fact I don't like the settings, but the defaults have conflict with
+" coc, which is annoying.
 " ===
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<C-e>"
 let g:UltiSnipsJumpBackwardTrigger="<C-n>"
+
 
 " ===
 " === bullet
@@ -206,7 +208,7 @@ let g:UltiSnipsJumpBackwardTrigger="<C-n>"
 " ===
 " === Formatter
 " ===
-Plug 'Chiel92/vim-autoformat'
+"Plug 'Chiel92/vim-autoformat'
 "Plug 'jiangmiao/auto-pairs'
 
 
@@ -345,32 +347,32 @@ nnoremap <LEADER><CR> :nohlsearch<CR>
 " ===
 nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
-    exec "w"
+    silent exec "w"
     if &filetype == 'c'
-        exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
-        exec "!time ./%<"
+        silent exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
+        silent exec "!time ./%<"
     elseif &filetype == 'vim'
-        exec "source %"
+        silent exec "source %"
     elseif &filetype == 'cpp'
         set splitbelow
-        exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<; ./%<"
+        silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<; ./%<"
         :sp
         :res -15
         :term ./%<
     elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!time java %<"
+        silent exec "!javac %"
+        silent exec "!time java %<"
     elseif &filetype == 'sh'
         :!time bash %
     elseif &filetype == 'python'
         "set splitbelow
         ":sp
         ":term python3 %
-        exec ":CocCommand python.execInTerminal"
+        silent exec ":CocCommand python.execInTerminal"
     elseif &filetype == 'html'
         silent! exec "!".g:mkdp_browser." % &"
     elseif &filetype == 'markdown'
-        exec "MarkdownPreview"
+        silent exec "MarkdownPreview"
     elseif &filetype == 'tex'
         silent! exec "VimtexStop"
         silent! exec "VimtexCompile"
@@ -437,7 +439,7 @@ nnoremap <LEADER>mtc :RemoveToc<CR>
 " ===
 " === Autoformat
 " ===
-nnoremap <LEADER>f  :Autoformat<CR>
+"nnoremap <LEADER>f  :Autoformat<CR>
 
 " ===
 " === delete a line
@@ -570,6 +572,8 @@ let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'yl'
 
+nnoremap <LEADER>gs :CocList marketplace<CR>
+
 
 " ==
 " == GitGutter
@@ -651,3 +655,5 @@ colorscheme OceanicNext
 "let ayucolor="mirage"
 "let ayucolor="dark"
 "colorscheme ayu
+
+nnoremap <LEADER>st :UltiSnipsEdit<CR>
