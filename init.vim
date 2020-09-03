@@ -97,6 +97,7 @@ Plug 'puremourning/vimspector'
 " ===
 Plug 'mbbill/undotree'
 
+
 " === work flow
 " ===
 " TODO:  <27-08-20, yl> "
@@ -105,10 +106,9 @@ Plug 'mbbill/undotree'
 
 
 " ===
+" === highlight word under cursor
 " ===
-" ===
-" TODO:  <27-08-20, yl> "
-Plug 'RRethy/vim-illuminate'
+"Plug 'RRethy/vim-illuminate'
 
 
 " ===
@@ -145,7 +145,6 @@ Plug 'honza/vim-snippets'
 " ===
 " === Other visual enhancement
 " ===
-" TODO:  <27-08-20, yl> "
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/vim-cursorword'
 
@@ -198,26 +197,14 @@ let g:UltiSnipsJumpBackwardTrigger="<C-n>"
 
 
 " ===
-" === bullet
-" ===
-" TODO:  <27-08-20, yl> "
-" maybe I want it
-"Plug 'dkarter/bullets.vim'
-
-
-" ===
 " === Formatter
 " ===
 "Plug 'Chiel92/vim-autoformat'
 "Plug 'jiangmiao/auto-pairs'
 
 
-" TODO:  <27-08-20, yl> "
-" below should be looked
-" Bookmarks
-Plug 'kshenoy/vim-signature'
-
 " Other useful utilities
+" TODO:  <03-09-20, yl> "
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim' " distraction free writing mode
 Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to change 'word' to `word`
