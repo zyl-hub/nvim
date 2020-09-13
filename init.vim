@@ -199,8 +199,7 @@ let g:UltiSnipsJumpBackwardTrigger="<C-n>"
 " ===
 " === Formatter
 " ===
-"Plug 'Chiel92/vim-autoformat'
-"Plug 'jiangmiao/auto-pairs'
+Plug 'Chiel92/vim-autoformat'
 
 
 " Other useful utilities
@@ -227,7 +226,7 @@ Plug 'mhinz/vim-startify'
 " Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
 " coc-pairs cannot be used because it work bad on c project
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
@@ -334,7 +333,8 @@ nnoremap <LEADER><CR> :nohlsearch<CR>
 " ===
 nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
-    silent exec "w"
+  silent exec "w"
+  silent exec "Autoformat"
     if &filetype == 'c'
         silent exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
         silent exec "!time ./%<"
@@ -342,7 +342,7 @@ func! CompileRunCode()
         silent exec "source %"
     elseif &filetype == 'cpp'
         set splitbelow
-        silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<; ./%<"
+        silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<"
         :sp
         :res -15
         :term ./%<
@@ -426,7 +426,7 @@ nnoremap <LEADER>mtc :RemoveToc<CR>
 " ===
 " === Autoformat
 " ===
-"nnoremap <LEADER>f  :Autoformat<CR>
+nnoremap <LEADER>f  :Autoformat<CR>
 
 " ===
 " === delete a line
@@ -644,3 +644,6 @@ colorscheme OceanicNext
 "colorscheme ayu
 
 nnoremap <LEADER>st :UltiSnipsEdit<CR>
+nnoremap z daw
+nnoremap r b
+nnoremap s w
