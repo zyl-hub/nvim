@@ -1,5 +1,5 @@
 "__   ___
-"\ \ / / |
+      "\ \ / / |
 " \ V /| |
 "  | | | |___
 "  |_| |_____|
@@ -84,6 +84,11 @@ Plug 'ayu-theme/ayu-vim'
 " === Light wiki to make my notes tidy"
 " ===
 Plug 'git@github.com:zyl-hub/Lightwiki.git'
+
+
+" Flutter
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'f-person/pubspec-assist-nvim', { 'for' : ['pubspec.yaml'] }
 
 
 " ===
@@ -243,7 +248,7 @@ let g:rainbow_active = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_spacemacs'
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -280,8 +285,8 @@ let g:airline_symbols.maxlinenr = ''
 " ===
 "let g:startify_custom_header = []
 let g:startify_bookmarks = [
-            \'~/.config/nvim/init.vim',
-            \]
+      \'~/.config/nvim/init.vim',
+      \]
 
 
 
@@ -296,16 +301,16 @@ let g:mkdp_browser = 'chromium'
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
-            \ 'mkit': {},
-            \ 'katex': {},
-            \ 'uml': {},
-            \ 'maid': {},
-            \ 'disable_sync_scroll': 0,
-            \ 'sync_scroll_type': 'middle',
-            \ 'hide_yaml_meta': 1,
-            \ 'sequence_diagrams': {},
-            \ 'flowchart_diagrams': {}
-            \ }
+      \ 'mkit': {},
+      \ 'katex': {},
+      \ 'uml': {},
+      \ 'maid': {},
+      \ 'disable_sync_scroll': 0,
+      \ 'sync_scroll_type': 'middle',
+      \ 'hide_yaml_meta': 1,
+      \ 'sequence_diagrams': {},
+      \ 'flowchart_diagrams': {}
+      \ }
 let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
@@ -335,41 +340,42 @@ nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
   silent exec "w"
   silent exec "Autoformat"
-    if &filetype == 'c'
-        silent exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
-        silent exec "!time ./%<"
-    elseif &filetype == 'vim'
-        silent exec "source %"
-    elseif &filetype == 'cpp'
-        set splitbelow
-        silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<"
-        :sp
-        :res -15
-        :term ./%<
-    elseif &filetype == 'java'
-        silent exec "!javac %"
-        silent exec "!time java %<"
-    elseif &filetype == 'sh'
-        :!time bash %
-    elseif &filetype == 'python'
-        "set splitbelow
-        ":sp
-        ":term python3 %
-        silent exec ":CocCommand python.execInTerminal"
-    elseif &filetype == 'html'
-        silent! exec "!".g:mkdp_browser." % &"
-    elseif &filetype == 'markdown'
-        silent exec "MarkdownPreview"
-    elseif &filetype == 'tex'
-        silent! exec "VimtexStop"
-        silent! exec "VimtexCompile"
-    elseif &filetype == 'dart'
-        CocCommand flutter.run
-    elseif &filetype == 'go'
-        set splitbelow
-        :sp
-        :term go run %
-    endif
+  if &filetype == 'c'
+    silent exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
+    silent exec "!time ./%<"
+  elseif &filetype == 'vim'
+    silent exec "source %"
+  elseif &filetype == 'cpp'
+    set splitbelow
+    silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<"
+    :sp
+    :res -15
+    :term ./%<
+  elseif &filetype == 'java'
+    silent exec "!javac %"
+    silent exec "!time java %<"
+  elseif &filetype == 'sh'
+    :!time bash %
+  elseif &filetype == 'python'
+    "set splitbelow
+    ":sp
+    ":term python3 %
+    silent exec ":CocCommand python.execInTerminal"
+  elseif &filetype == 'html'
+    silent! exec "!".g:mkdp_browser." % &"
+  elseif &filetype == 'markdown'
+    silent exec "MarkdownPreview"
+  elseif &filetype == 'tex'
+    silent! exec "VimtexStop"
+    silent! exec "VimtexCompile"
+  elseif &filetype == 'dart'
+    exec "CocCommand flutter.run -d ".g:flutter_default_device
+    silent! exec "CocCommand flutter.dev.openDevLog"
+  elseif &filetype == 'go'
+    set splitbelow
+    :sp
+    :term go run %
+  endif
 endfunc
 
 
@@ -467,14 +473,14 @@ nnoremap wq :wqa<CR>
 "let g:asyncrun_open = 6
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
-    " has to be a function to avoid the extra space fzf#run insers otherwise
-    execute '0r ~/.config/nvim/vimspector-json/'.a:template
+  " has to be a function to avoid the extra space fzf#run insers otherwise
+  execute '0r ~/.config/nvim/vimspector-json/'.a:template
 endfunction
 command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
-            \   'source': 'ls -1 ~/.config/nvim/vimspector-json',
-            \   'down': 20,
-            \   'sink': function('<sid>read_template_into_buffer')
-            \ })
+      \   'source': 'ls -1 ~/.config/nvim/vimspector-json',
+      \   'down': 20,
+      \   'sink': function('<sid>read_template_into_buffer')
+      \ })
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
@@ -489,34 +495,35 @@ autocmd Filetype markdown set conceallevel=2
 " === coc settings
 " ===
 let g:coc_global_extensions = [
-            \ 'coc-json',
-            \ 'coc-vimlsp',
-            \ 'coc-marketplace',
-            \ 'coc-actions',
-            \ 'coc-clangd',
-            \ 'coc-explorer',
-            \ 'coc-translator',
-            \ 'coc-word',
-            \ 'coc-emoji',
-            \ 'coc-tabnine',
-            \ 'coc-snippets',
-            \ 'coc-python']
+      \ 'coc-json',
+      \ 'coc-vimlsp',
+      \ 'coc-marketplace',
+      \ 'coc-actions',
+      \ 'coc-clangd',
+      \ 'coc-explorer',
+      \ 'coc-flutter-tools',
+      \ 'coc-translator',
+      \ 'coc-word',
+      \ 'coc-emoji',
+      \ 'coc-tabnine',
+      \ 'coc-snippets',
+      \ 'coc-python']
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -533,17 +540,17 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 nmap <LEADER>rn <Plug>(coc-rename)
 
 function! s:cocActionsOpenFromSelected(type) abort
-    execute 'CocCommand actions.open ' . a:type
+  execute 'CocCommand actions.open ' . a:type
 endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
@@ -621,10 +628,10 @@ let g:undotree_WindowLayout = 2
 let g:undotree_DiffpanelHeight = 8
 let g:undotree_SplitWidth = 24
 function g:Undotree_CustomMap()
-    nmap <buffer> u <plug>UndotreeNextState
-    nmap <buffer> e <plug>UndotreePreviousState
-    nmap <buffer> U 5<plug>UndotreeNextState
-    nmap <buffer> E 5<plug>UndotreePreviousState
+  nmap <buffer> u <plug>UndotreeNextState
+  nmap <buffer> e <plug>UndotreePreviousState
+  nmap <buffer> U 5<plug>UndotreeNextState
+  nmap <buffer> E 5<plug>UndotreePreviousState
 endfunc
 
 
