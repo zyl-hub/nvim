@@ -29,9 +29,9 @@ set encoding=utf-8
 let &t_ut=''
 " tab or space that's a question
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set list
 set listchars=tab:▸\ ,trail:▫
 set scrolloff=4
