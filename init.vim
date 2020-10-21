@@ -651,6 +651,7 @@ colorscheme OceanicNext
 "colorscheme ayu
 
 nnoremap <LEADER>st :UltiSnipsEdit<CR>
-nnoremap z daw
+"nnoremap z daw
 nnoremap r b
 nnoremap s w
+nnoremap x za
