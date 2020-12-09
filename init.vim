@@ -558,6 +558,7 @@ nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<C
 nnoremap <silent> tt :CocCommand explorer<CR>
 nnoremap <silent> cc :CocCommand<CR>
 nnoremap <silent> ts :CocCommand translator.popup<CR>
+nnoremap <silent> r :CocCommand translator.replace<CR>
 
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-e> <Plug>(coc-snippets-select)
@@ -652,6 +653,6 @@ colorscheme OceanicNext
 
 nnoremap <LEADER>st :UltiSnipsEdit<CR>
 "nnoremap z daw
-nnoremap r b
+"nnoremap r b
 nnoremap s w
 nnoremap x za
