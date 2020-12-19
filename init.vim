@@ -1,5 +1,5 @@
 "__   ___
-      "\ \ / / |
+"\ \ / / |
 " \ V /| |
 "  | | | |___
 "  |_| |_____|
@@ -339,7 +339,6 @@ nnoremap <LEADER><CR> :nohlsearch<CR>
 nnoremap <LEADER>r :call CompileRunCode()<CR>
 func! CompileRunCode()
   silent exec "w"
-  silent exec "Autoformat"
   if &filetype == 'c'
     silent exec "!gcc -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c2x % -o %<; ./%<"
     silent exec "!time ./%<"

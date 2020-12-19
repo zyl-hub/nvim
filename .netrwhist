@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/yl/api-examples/python'
+let g:netrw_dirhist_8='/home/yl/owl2-master/source'
+let g:netrw_dirhist_7='/home/yl/owl2-master'
+let g:netrw_dirhist_6='/home/yl/vimwiki/Code/webCrawler'
 let g:netrw_dirhist_5='/home/yl/homework'
 let g:netrw_dirhist_4='/home/yl/vimwiki'
 let g:netrw_dirhist_3='/home/yl/vimwiki/Code/DataStructure/Chapter/LinkList'
 let g:netrw_dirhist_2='/home/yl/vimwiki/Code/DataStructure/Chapter'
 let g:netrw_dirhist_1='/home/yl/vimwiki/Code/DataStructure'
 let g:netrw_dirhist_0='/usr/lib/qt/plugins'
-let g:netrw_dirhist_9='/home/yl/vimwiki/Code/CPPP/CodeList'
-let g:netrw_dirhist_8='/home/yl/vimwiki/Code/webCrawler'
-let g:netrw_dirhist_7='/home/yl/MyConfig/dwm-newversion'
-let g:netrw_dirhist_6='/home/yl/vimwiki/Code/webCrawler'
