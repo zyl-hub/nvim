@@ -83,7 +83,7 @@ Plug 'ayu-theme/ayu-vim'
 " ===
 " === Light wiki to make my notes tidy"
 " ===
-Plug 'git@github.com:zyl-hub/Lightwiki.git'
+Plug 'zyl-hub/Lightwiki'
 
 
 " Flutter
@@ -127,7 +127,7 @@ Plug 'vim-airline/vim-airline-themes'
 " === File navigation
 " ===
 Plug 'junegunn/fzf.vim'
-Plug 'kevinhwang91/rnvimr', {'do': 'make sysc'}
+Plug 'kevinhwang91/rnvimr'
 
 
 " Taglist
@@ -321,6 +321,8 @@ let g:mkdp_page_title = '「${name}」'
 " === rnvimr
 " ===
 nnoremap ra :RnvimrToggle<CR>
+let g:rnvimr_enable_ex = 1
+"let g:rnvimr_vanilla = 1
 set signcolumn=yes
 highlight clear SignColumn
 
