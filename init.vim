@@ -468,7 +468,6 @@ nnoremap <LEADER>ta i<++><ESC>
 " === some modify to make me change between buffers
 " ===
 nnoremap <LEADER>n :bn<CR>
-nnoremap wq :wqa<CR>
 
 " ===
 " === asyncrun
@@ -661,3 +660,4 @@ nnoremap s w
 nnoremap x za
 let g:vimwiki_list = [{'path':'~/wiki/',
             \'syntax':'markdown','ext':'.md'}]
+nnoremap wq :wqa<CR>
