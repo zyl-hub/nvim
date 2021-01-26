@@ -91,7 +91,8 @@ Plug 'ayu-theme/ayu-vim'
 " ===
 " === wiki to make my notes tidy"
 " ===
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
+Plug 'zyl-hub/Lightwiki'
 
 " Flutter
 Plug 'dart-lang/dart-vim-plugin'
@@ -665,8 +666,8 @@ nnoremap <LEADER>st :UltiSnipsEdit<CR>
 "nnoremap r b
 nnoremap s w
 nnoremap x za
-let g:vimwiki_list = [{'path':'~/wiki/',
-            \'syntax':'markdown','ext':'.md'}]
+"let g:vimwiki_list = [{'path':'~/wiki/',
+            "\'syntax':'markdown','ext':'.md'}]
 nnoremap wq :wqa<CR>
 "lua <<EOF
 "require'nvim-treesitter.configs'.setup {
