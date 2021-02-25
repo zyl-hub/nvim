@@ -72,7 +72,10 @@ call plug#begin('~/.config/nvim/plugged')
 " ===
 " === treesitter
 " ===
-"Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context'
 "Plug 'nvim-treesitter/nvim-treesitter'
 
 
@@ -669,12 +672,12 @@ nnoremap x za
 "let g:vimwiki_list = [{'path':'~/wiki/',
             "\'syntax':'markdown','ext':'.md'}]
 nnoremap wq :wqa<CR>
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-  "ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  "highlight = {
-    "enable = true,              -- false will disable the whole extension
-    "disable = {},  -- list of language that will be disabled
-  "},
-"}
-"EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = {},  -- list of language that will be disabled
+  },
+}
+EOF
