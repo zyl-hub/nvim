@@ -82,11 +82,11 @@ endif
 " ===
 " === treesitter
 " ===
-"Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
-"Plug 'nvim-treesitter/nvim-treesitter-refactor'
-"Plug 'nvim-treesitter/playground'
-"Plug 'romgrk/nvim-treesitter-context'
-"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 
 " ===
@@ -649,9 +649,9 @@ function g:Undotree_CustomMap()
 endfunc
 
 
-colorscheme OceanicNext
+"colorscheme OceanicNext
 "colorscheme deus
-"colorscheme dracula
+colorscheme dracula
 "colorscheme zenburn
 "colorscheme onedark
 
@@ -672,15 +672,15 @@ nnoremap x za
 "let g:vimwiki_list = [{'path':'~/wiki/',
 "\'syntax':'markdown','ext':'.md'}]
 nnoremap wq :wqa<CR>
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"highlight = {
-"enable = true,              -- false will disable the whole extension
-"disable = {},  -- list of language that will be disabled
-"},
-"}
-"EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+highlight = {
+enable = true,              -- false will disable the whole extension
+disable = {},  -- list of language that will be disabled
+},
+}
+EOF
 nnoremap tt :Defx -split=vertical -winwidth=50 -direction=topleft<CR>
 autocmd FileType defx call s:defx_my_settings()
 autocmd BufWritePost * call defx#redraw()
