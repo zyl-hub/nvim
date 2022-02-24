@@ -238,7 +238,7 @@ Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/switch.vim'
 Plug 'preservim/nerdcommenter'
 "Plug 'lilydjwg/fcitx.vim'
-"Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " Plug 'liuchengxu/vim-which-key'
 " Auto Pairs was statisfied by coc-pairs
 " coc-pairs cannot be used because it work bad on c project
@@ -358,7 +358,6 @@ func! CompileRunCode()
     elseif &filetype == 'vim'
         silent exec "source %"
     elseif &filetype == 'cpp'
-        set splitbelow
         silent exec "!g++ -ggdb3 -Wall -fomit-frame-pointer -m64 -std=c++20 % -o %<"
         :sp
         :res -15
@@ -369,10 +368,9 @@ func! CompileRunCode()
     elseif &filetype == 'sh'
         :!time bash %
     elseif &filetype == 'python'
-        "set splitbelow
-        ":sp
-        ":term python3 %
-        silent exec ":CocCommand python.execInTerminal"
+        set splitbelow
+        :sp
+        :term python %
     elseif &filetype == 'html'
         silent! exec "!".g:mkdp_browser." % &"
     elseif &filetype == 'markdown'
@@ -520,7 +518,7 @@ let g:coc_global_extensions = [
             \ 'coc-emoji',
             \ 'coc-tabnine',
             \ 'coc-snippets',
-            \ 'coc-python']
+            \ 'coc-pyright']
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
